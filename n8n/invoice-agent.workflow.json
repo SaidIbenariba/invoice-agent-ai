@@ -1,0 +1,225 @@
+{
+  "name": "Invoice Agent AI: accounts payable inbox",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Invoice Agent AI\nEvery minute: take the new supplier invoices from the inbox, let the local AI agent check each one against its purchase order and goods receipt, then route it by decision.\n\nThe agent API must be running:\n`uv run uvicorn invoice_agent_ai.api:app --port 8000`\n(n8n in Docker: use `http://host.docker.internal:8000`)\n\nReplace the three end nodes with your tools: Google Sheets or your accounting system for approved invoices, Slack or email for the review queue.",
+        "height": 300,
+        "width": 420
+      },
+      "id": "6a3f1c2e-0d1b-4c55-9a4e-2f0c1b9e7a01",
+      "name": "About",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-260, -320]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "0b7d4e1a-8f2c-4a3b-9c1d-5e6f7a8b9c02",
+      "name": "Every minute",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-240, 40]
+    },
+    {
+      "parameters": {},
+      "id": "1c8e5f2b-9a3d-4b4c-8d2e-6f7a8b9c0d03",
+      "name": "Run now",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [-240, 220]
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:8000/inbox",
+        "options": {}
+      },
+      "id": "2d9f6a3c-0b4e-4c5d-9e3f-7a8b9c0d1e04",
+      "name": "New invoices in inbox",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [0, 120]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "files",
+        "options": {}
+      },
+      "id": "3e0a7b4d-1c5f-4d6e-8f4a-8b9c0d1e2f05",
+      "name": "One item per invoice",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [220, 120]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/invoices/process",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ file: $json.file }) }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1
+            }
+          },
+          "timeout": 600000
+        }
+      },
+      "id": "4f1b8c5e-2d6a-4e7f-9a5b-9c0d1e2f3a06",
+      "name": "AI agent: check and decide",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 120]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a1b2c3d4-0001-4e5f-8a9b-0c1d2e3f4a5b",
+                    "leftValue": "={{ $json.decision }}",
+                    "rightValue": "APPROVE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Approved"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a1b2c3d4-0002-4e5f-8a9b-0c1d2e3f4a5b",
+                    "leftValue": "={{ $json.decision }}",
+                    "rightValue": "HOLD",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "On hold"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a1b2c3d4-0003-4e5f-8a9b-0c1d2e3f4a5b",
+                    "leftValue": "={{ $json.decision }}",
+                    "rightValue": "REJECT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Rejected"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5a2c9d6f-3e7b-4f8a-8b6c-0d1e2f3a4b07",
+      "name": "Route by decision",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [660, 120]
+    },
+    {
+      "parameters": {},
+      "id": "6b3d0e7a-4f8c-4a9b-9c7d-1e2f3a4b5c08",
+      "name": "Pay run (Sheets / accounting)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [900, -20]
+    },
+    {
+      "parameters": {},
+      "id": "7c4e1f8b-5a9d-4b0c-8d8e-2f3a4b5c6d09",
+      "name": "AP review (Slack / email)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [900, 120]
+    },
+    {
+      "parameters": {},
+      "id": "8d5f2a9c-6b0e-4c1d-9e9f-3a4b5c6d7e10",
+      "name": "Rejected log",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [900, 260]
+    }
+  ],
+  "connections": {
+    "Every minute": {
+      "main": [[{"node": "New invoices in inbox", "type": "main", "index": 0}]]
+    },
+    "Run now": {
+      "main": [[{"node": "New invoices in inbox", "type": "main", "index": 0}]]
+    },
+    "New invoices in inbox": {
+      "main": [[{"node": "One item per invoice", "type": "main", "index": 0}]]
+    },
+    "One item per invoice": {
+      "main": [[{"node": "AI agent: check and decide", "type": "main", "index": 0}]]
+    },
+    "AI agent: check and decide": {
+      "main": [[{"node": "Route by decision", "type": "main", "index": 0}]]
+    },
+    "Route by decision": {
+      "main": [
+        [{"node": "Pay run (Sheets / accounting)", "type": "main", "index": 0}],
+        [{"node": "AP review (Slack / email)", "type": "main", "index": 0}],
+        [{"node": "Rejected log", "type": "main", "index": 0}]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "active": false
+}

@@ -1,0 +1,47 @@
+{
+  "doc_id": "inv_023",
+  "file": "inv_023.pdf",
+  "layout": "fr",
+  "photo": false,
+  "scenario": "clean",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-7799"
+  },
+  "invoice": {
+    "supplier_name": "Bureau Plus Distribution",
+    "supplier_tax_id": "FR49394408006",
+    "invoice_number": "F2026-4373",
+    "invoice_date": "2026-10-01",
+    "due_date": "2026-10-31",
+    "currency": "EUR",
+    "subtotal": 3006.45,
+    "tax_rate": 20.0,
+    "tax_amount": 601.29,
+    "total": 3607.74,
+    "line_items": [
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 10.0,
+        "unit_price": 6.57,
+        "amount": 65.7
+      },
+      {
+        "description": "Cartouche toner noir",
+        "quantity": 2.0,
+        "unit_price": 85.5,
+        "amount": 171.0
+      },
+      {
+        "description": "Prestation de maintenance",
+        "quantity": 25.0,
+        "unit_price": 110.79,
+        "amount": 2769.75
+      }
+    ],
+    "po_number": "PO-2026-7799",
+    "bank_account": "FR76 7072 7675 6990 8300 8933 574"
+  }
+}

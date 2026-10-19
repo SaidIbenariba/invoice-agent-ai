@@ -1,0 +1,53 @@
+{
+  "doc_id": "inv_010",
+  "file": "inv_010.pdf",
+  "layout": "fr",
+  "photo": false,
+  "scenario": "po_typo",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-3999"
+  },
+  "invoice": {
+    "supplier_name": "Bureau Plus Distribution",
+    "supplier_tax_id": "FR49394408006",
+    "invoice_number": "F2026-8058",
+    "invoice_date": "2026-09-19",
+    "due_date": "2026-10-19",
+    "currency": "EUR",
+    "subtotal": 4333.71,
+    "tax_rate": 10.0,
+    "tax_amount": 433.37,
+    "total": 4767.08,
+    "line_items": [
+      {
+        "description": "Carton double cannelure",
+        "quantity": 6.0,
+        "unit_price": 1.83,
+        "amount": 10.98
+      },
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 4.0,
+        "unit_price": 6.52,
+        "amount": 26.08
+      },
+      {
+        "description": "Prestation de maintenance",
+        "quantity": 10.0,
+        "unit_price": 115.69,
+        "amount": 1156.9
+      },
+      {
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 25.0,
+        "unit_price": 125.59,
+        "amount": 3139.75
+      }
+    ],
+    "po_number": "PO-2026-4006",
+    "bank_account": "FR76 7072 7675 6990 8300 8933 574"
+  }
+}

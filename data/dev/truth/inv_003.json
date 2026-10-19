@@ -1,0 +1,53 @@
+{
+  "doc_id": "inv_003",
+  "file": "inv_003.pdf",
+  "layout": "fr",
+  "photo": false,
+  "scenario": "clean",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-6834"
+  },
+  "invoice": {
+    "supplier_name": "Transports Lefèvre SAS",
+    "supplier_tax_id": "FR63245523313",
+    "invoice_number": "F2026-7568",
+    "invoice_date": "2026-09-25",
+    "due_date": "2026-11-09",
+    "currency": "EUR",
+    "subtotal": 1500.22,
+    "tax_rate": 20.0,
+    "tax_amount": 300.04,
+    "total": 1800.26,
+    "line_items": [
+      {
+        "description": "Prestation de maintenance",
+        "quantity": 10.0,
+        "unit_price": 94.53,
+        "amount": 945.3
+      },
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 20.0,
+        "unit_price": 7.19,
+        "amount": 143.8
+      },
+      {
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 4.0,
+        "unit_price": 90.13,
+        "amount": 360.52
+      },
+      {
+        "description": "Carton double cannelure",
+        "quantity": 20.0,
+        "unit_price": 2.53,
+        "amount": 50.6
+      }
+    ],
+    "po_number": "PO-2026-6834",
+    "bank_account": "FR76 5562 1962 5288 8633 0567 499"
+  }
+}

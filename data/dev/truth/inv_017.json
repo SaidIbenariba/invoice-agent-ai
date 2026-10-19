@@ -1,0 +1,57 @@
+{
+  "doc_id": "inv_017",
+  "file": "inv_017.jpg",
+  "layout": "ma",
+  "photo": true,
+  "scenario": "po_missing_ambiguous",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "po_ambiguous"
+    ],
+    "all_policy_reasons": [
+      "po_ambiguous"
+    ],
+    "po_number": null
+  },
+  "invoice": {
+    "supplier_name": "Atlas Transport SARL",
+    "supplier_tax_id": "178437076607908",
+    "invoice_number": "2026/7284",
+    "invoice_date": "2026-09-25",
+    "due_date": "2026-11-09",
+    "currency": "MAD",
+    "subtotal": 41736.73,
+    "tax_rate": 7.0,
+    "tax_amount": 2921.57,
+    "total": 44658.3,
+    "line_items": [
+      {
+        "description": "Toner imprimante",
+        "quantity": 20.0,
+        "unit_price": 451.18,
+        "amount": 9023.6
+      },
+      {
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 50.0,
+        "unit_price": 115.59,
+        "amount": 5779.5
+      },
+      {
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 25.0,
+        "unit_price": 1072.73,
+        "amount": 26818.25
+      },
+      {
+        "description": "Emballage carton",
+        "quantity": 6.0,
+        "unit_price": 19.23,
+        "amount": 115.38
+      }
+    ],
+    "po_number": null,
+    "bank_account": "736 475 3153561486657663 90"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "n8n_version": "1.123.85",
+  "mode": "rules baseline + perfect reading (wiring test)",
+  "items_per_node_output": {
+    "Every minute": [
+      1
+    ],
+    "New invoices in inbox": [
+      1
+    ],
+    "One item per invoice": [
+      24
+    ],
+    "AI agent: check and decide": [
+      24
+    ],
+    "Route by decision": [
+      10,
+      12,
+      2
+    ],
+    "Pay run (Sheets / accounting)": [
+      10
+    ],
+    "AP review (Slack / email)": [
+      12
+    ],
+    "Rejected log": [
+      2
+    ]
+  }
+}

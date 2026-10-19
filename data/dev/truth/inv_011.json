@@ -1,0 +1,57 @@
+{
+  "doc_id": "inv_011",
+  "file": "inv_011.pdf",
+  "layout": "ma",
+  "photo": false,
+  "scenario": "bank_change",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "bank_mismatch"
+    ],
+    "all_policy_reasons": [
+      "bank_mismatch"
+    ],
+    "po_number": "PO-2026-4461"
+  },
+  "invoice": {
+    "supplier_name": "Atlas Transport SARL",
+    "supplier_tax_id": "178437076607908",
+    "invoice_number": "2026/6248",
+    "invoice_date": "2026-09-10",
+    "due_date": "2026-10-25",
+    "currency": "MAD",
+    "subtotal": 18427.64,
+    "tax_rate": 10.0,
+    "tax_amount": 1842.76,
+    "total": 20270.4,
+    "line_items": [
+      {
+        "description": "Toner imprimante",
+        "quantity": 12.0,
+        "unit_price": 600.47,
+        "amount": 7205.64
+      },
+      {
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 25.0,
+        "unit_price": 156.7,
+        "amount": 3917.5
+      },
+      {
+        "description": "Rame papier A4",
+        "quantity": 10.0,
+        "unit_price": 38.19,
+        "amount": 381.9
+      },
+      {
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 10.0,
+        "unit_price": 692.26,
+        "amount": 6922.6
+      }
+    ],
+    "po_number": "PO-2026-4461",
+    "bank_account": "630 865 0760213477391988 05"
+  }
+}

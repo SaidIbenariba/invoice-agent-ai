@@ -1,0 +1,53 @@
+{
+  "doc_id": "inv_020",
+  "file": "inv_020.pdf",
+  "layout": "fr",
+  "photo": false,
+  "scenario": "po_missing_unique",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-8718"
+  },
+  "invoice": {
+    "supplier_name": "Transports Lefèvre SAS",
+    "supplier_tax_id": "FR63245523313",
+    "invoice_number": "F2026-6410",
+    "invoice_date": "2026-09-27",
+    "due_date": "2026-11-11",
+    "currency": "EUR",
+    "subtotal": 1859.98,
+    "tax_rate": 10.0,
+    "tax_amount": 186.0,
+    "total": 2045.98,
+    "line_items": [
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 2.0,
+        "unit_price": 5.22,
+        "amount": 10.44
+      },
+      {
+        "description": "Carton double cannelure",
+        "quantity": 20.0,
+        "unit_price": 1.66,
+        "amount": 33.2
+      },
+      {
+        "description": "Heure de manutention",
+        "quantity": 6.0,
+        "unit_price": 33.39,
+        "amount": 200.34
+      },
+      {
+        "description": "Cartouche toner noir",
+        "quantity": 25.0,
+        "unit_price": 64.64,
+        "amount": 1616.0
+      }
+    ],
+    "po_number": null,
+    "bank_account": "FR76 5562 1962 5288 8633 0567 499"
+  }
+}

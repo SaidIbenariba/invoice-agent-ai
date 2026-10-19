@@ -1,0 +1,51 @@
+{
+  "doc_id": "inv_008",
+  "file": "inv_008.jpg",
+  "layout": "fr",
+  "photo": true,
+  "scenario": "invoice_error",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "invoice_check_failed"
+    ],
+    "all_policy_reasons": [
+      "invoice_check_failed"
+    ],
+    "po_number": "PO-2026-9208"
+  },
+  "invoice": {
+    "supplier_name": "Bureau Plus Distribution",
+    "supplier_tax_id": "FR49394408006",
+    "invoice_number": "F2026-6229",
+    "invoice_date": "2026-09-10",
+    "due_date": "2026-10-10",
+    "currency": "EUR",
+    "subtotal": 2749.47,
+    "tax_rate": 20.0,
+    "tax_amount": 494.9,
+    "total": 3244.37,
+    "line_items": [
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 4.0,
+        "unit_price": 6.11,
+        "amount": 24.44
+      },
+      {
+        "description": "Prestation de maintenance",
+        "quantity": 25.0,
+        "unit_price": 68.07,
+        "amount": 1701.75
+      },
+      {
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 8.0,
+        "unit_price": 127.91,
+        "amount": 1023.28
+      }
+    ],
+    "po_number": "PO-2026-9208",
+    "bank_account": "FR76 7072 7675 6990 8300 8933 574"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "doc_id": "inv_013",
+  "file": "inv_013.pdf",
+  "layout": "us",
+  "photo": false,
+  "scenario": "clean",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-4666"
+  },
+  "invoice": {
+    "supplier_name": "Northwind Office Supply Inc.",
+    "supplier_tax_id": "74-1423048",
+    "invoice_number": "INV-1529",
+    "invoice_date": "2026-09-10",
+    "due_date": "2026-10-10",
+    "currency": "USD",
+    "subtotal": 156.3,
+    "tax_rate": 8.25,
+    "tax_amount": 12.89,
+    "total": 169.19,
+    "line_items": [
+      {
+        "description": "Stretch wrap roll 18in",
+        "quantity": 4.0,
+        "unit_price": 19.95,
+        "amount": 79.8
+      },
+      {
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 2.0,
+        "unit_price": 38.25,
+        "amount": 76.5
+      }
+    ],
+    "po_number": "PO-2026-4666",
+    "bank_account": "Routing 001225162  Account 0381909017"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "doc_id": "inv_021",
+  "file": "inv_021.jpg",
+  "layout": "ma",
+  "photo": true,
+  "scenario": "clean",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-2223"
+  },
+  "invoice": {
+    "supplier_name": "Bureautique Rabat SARL",
+    "supplier_tax_id": "534015611668643",
+    "invoice_number": "2026/5811",
+    "invoice_date": "2026-09-10",
+    "due_date": "2026-10-25",
+    "currency": "MAD",
+    "subtotal": 4474.46,
+    "tax_rate": 20.0,
+    "tax_amount": 894.89,
+    "total": 5369.35,
+    "line_items": [
+      {
+        "description": "Emballage carton",
+        "quantity": 8.0,
+        "unit_price": 11.12,
+        "amount": 88.96
+      },
+      {
+        "description": "Toner imprimante",
+        "quantity": 10.0,
+        "unit_price": 438.55,
+        "amount": 4385.5
+      }
+    ],
+    "po_number": "PO-2026-2223",
+    "bank_account": "241 875 6891000943657913 06"
+  }
+}

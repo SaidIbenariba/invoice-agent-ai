@@ -1,0 +1,45 @@
+{
+  "doc_id": "inv_015",
+  "file": "inv_015.pdf",
+  "layout": "fr",
+  "photo": false,
+  "scenario": "bank_change",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "bank_mismatch"
+    ],
+    "all_policy_reasons": [
+      "bank_mismatch"
+    ],
+    "po_number": "PO-2026-6293"
+  },
+  "invoice": {
+    "supplier_name": "Transports Lefèvre SAS",
+    "supplier_tax_id": "FR63245523313",
+    "invoice_number": "F2026-6853",
+    "invoice_date": "2026-09-09",
+    "due_date": "2026-10-24",
+    "currency": "EUR",
+    "subtotal": 280.28,
+    "tax_rate": 5.5,
+    "tax_amount": 15.42,
+    "total": 295.7,
+    "line_items": [
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 50.0,
+        "unit_price": 5.29,
+        "amount": 264.5
+      },
+      {
+        "description": "Carton double cannelure",
+        "quantity": 6.0,
+        "unit_price": 2.63,
+        "amount": 15.78
+      }
+    ],
+    "po_number": "PO-2026-6293",
+    "bank_account": "FR76 6324 8071 9479 1664 1600 641"
+  }
+}

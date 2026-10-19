@@ -1,0 +1,36 @@
+[project]
+name = "invoice-agent-ai"
+version = "0.1.0"
+description = "A local AI agent that checks supplier invoices against purchase orders and deliveries before anything is paid. Ollama, n8n and MCP."
+readme = "README.md"
+authors = [
+    { name = "Said Ibenariba" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.147.0",
+    "httpx>=0.28.1",
+    "invoice-ai>=0.1.0",
+    "mcp>=2.3.0",
+    "pydantic>=2.14.1",
+    "rapidfuzz>=3.14.6",
+    "streamlit>=1.66.0",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+invoice-agent-ai = "invoice_agent_ai.__main__:main"
+
+[build-system]
+requires = ["uv_build>=0.11.7,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+invoice-ai = { git = "https://github.com/SaidIbenariba/private-invoice-ai", rev = "d864609" }
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "playwright>=1.64.0",
+    "pytest>=9.1.1",
+]

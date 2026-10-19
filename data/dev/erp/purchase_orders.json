@@ -1,0 +1,992 @@
+[
+  {
+    "po_number": "PO-2026-1613",
+    "supplier_id": "SUP-102",
+    "order_date": "2026-09-06",
+    "currency": "USD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Printer paper, case",
+        "quantity": 20.0,
+        "unit_price": 38.17
+      },
+      {
+        "line": 2,
+        "description": "Stretch wrap roll 18in",
+        "quantity": 20.0,
+        "unit_price": 30.72
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-9411",
+    "supplier_id": "SUP-103",
+    "order_date": "2026-09-09",
+    "currency": "USD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Stretch wrap roll 18in",
+        "quantity": 50.0,
+        "unit_price": 23.75
+      },
+      {
+        "line": 2,
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 12.0,
+        "unit_price": 26.53
+      },
+      {
+        "line": 3,
+        "description": "Warehouse labor (hour)",
+        "quantity": 12.0,
+        "unit_price": 29.67
+      },
+      {
+        "line": 4,
+        "description": "Corrugated boxes 24x18x12",
+        "quantity": 5.0,
+        "unit_price": 2.49
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-7321",
+    "supplier_id": "SUP-104",
+    "order_date": "2026-09-06",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Ramette papier A4 80g",
+        "quantity": 50.0,
+        "unit_price": 6.14
+      },
+      {
+        "line": 2,
+        "description": "Prestation de maintenance",
+        "quantity": 20.0,
+        "unit_price": 115.53
+      },
+      {
+        "line": 3,
+        "description": "Heure de manutention",
+        "quantity": 20.0,
+        "unit_price": 47.55
+      },
+      {
+        "line": 4,
+        "description": "Carton double cannelure",
+        "quantity": 5.0,
+        "unit_price": 2.88
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-9831",
+    "supplier_id": "SUP-105",
+    "order_date": "2026-08-30",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 12.0,
+        "unit_price": 155.48
+      },
+      {
+        "line": 2,
+        "description": "Carton double cannelure",
+        "quantity": 5.0,
+        "unit_price": 1.96
+      },
+      {
+        "line": 3,
+        "description": "Cartouche toner noir",
+        "quantity": 5.0,
+        "unit_price": 71.53
+      },
+      {
+        "line": 4,
+        "description": "Ramette papier A4 80g",
+        "quantity": 8.0,
+        "unit_price": 6.99
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-9937",
+    "supplier_id": "SUP-106",
+    "order_date": "2026-08-20",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Cartouche toner noir",
+        "quantity": 10.0,
+        "unit_price": 70.54
+      },
+      {
+        "line": 2,
+        "description": "Carton double cannelure",
+        "quantity": 20.0,
+        "unit_price": 1.14
+      },
+      {
+        "line": 3,
+        "description": "Ramette papier A4 80g",
+        "quantity": 5.0,
+        "unit_price": 5.84
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-5855",
+    "supplier_id": "SUP-107",
+    "order_date": "2026-09-10",
+    "currency": "GBP",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Design hours",
+        "quantity": 50.0,
+        "unit_price": 43.99
+      },
+      {
+        "line": 2,
+        "description": "Courier fuel surcharge",
+        "quantity": 6.0,
+        "unit_price": 8.06
+      },
+      {
+        "line": 3,
+        "description": "Mailing bags, large (100)",
+        "quantity": 2.0,
+        "unit_price": 13.45
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-1302",
+    "supplier_id": "SUP-108",
+    "order_date": "2026-08-26",
+    "currency": "GBP",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Mailing bags, large (100)",
+        "quantity": 20.0,
+        "unit_price": 16.76
+      },
+      {
+        "line": 2,
+        "description": "Same-day courier, zone 2",
+        "quantity": 12.0,
+        "unit_price": 30.69
+      },
+      {
+        "line": 3,
+        "description": "Design hours",
+        "quantity": 8.0,
+        "unit_price": 48.13
+      },
+      {
+        "line": 4,
+        "description": "Courier fuel surcharge",
+        "quantity": 25.0,
+        "unit_price": 6.68
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-5759",
+    "supplier_id": "SUP-109",
+    "order_date": "2026-08-25",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 10.0,
+        "unit_price": 105.59
+      },
+      {
+        "line": 2,
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 2.0,
+        "unit_price": 1208.81
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-3510",
+    "supplier_id": "SUP-110",
+    "order_date": "2026-09-09",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Toner imprimante",
+        "quantity": 4.0,
+        "unit_price": 463.26
+      },
+      {
+        "line": 2,
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 2.0,
+        "unit_price": 669.21
+      },
+      {
+        "line": 3,
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 10.0,
+        "unit_price": 101.77
+      },
+      {
+        "line": 4,
+        "description": "Emballage carton",
+        "quantity": 10.0,
+        "unit_price": 17.02
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-8778",
+    "supplier_id": "SUP-110",
+    "order_date": "2026-08-22",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Toner imprimante",
+        "quantity": 12.0,
+        "unit_price": 439.4
+      },
+      {
+        "line": 2,
+        "description": "Rame papier A4",
+        "quantity": 5.0,
+        "unit_price": 41.14
+      },
+      {
+        "line": 3,
+        "description": "Emballage carton",
+        "quantity": 12.0,
+        "unit_price": 21.17
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-1829",
+    "supplier_id": "SUP-107",
+    "order_date": "2026-09-10",
+    "currency": "GBP",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Courier fuel surcharge",
+        "quantity": 10.0,
+        "unit_price": 4.59
+      },
+      {
+        "line": 2,
+        "description": "Mailing bags, large (100)",
+        "quantity": 5.0,
+        "unit_price": 14.77
+      },
+      {
+        "line": 3,
+        "description": "Printed flyers A5 (500)",
+        "quantity": 2.0,
+        "unit_price": 46.59
+      },
+      {
+        "line": 4,
+        "description": "Same-day courier, zone 2",
+        "quantity": 6.0,
+        "unit_price": 41.74
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-6834",
+    "supplier_id": "SUP-105",
+    "order_date": "2026-09-10",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Prestation de maintenance",
+        "quantity": 10.0,
+        "unit_price": 94.53
+      },
+      {
+        "line": 2,
+        "description": "Ramette papier A4 80g",
+        "quantity": 20.0,
+        "unit_price": 7.19
+      },
+      {
+        "line": 3,
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 4.0,
+        "unit_price": 90.13
+      },
+      {
+        "line": 4,
+        "description": "Carton double cannelure",
+        "quantity": 20.0,
+        "unit_price": 2.53
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-2721",
+    "supplier_id": "SUP-109",
+    "order_date": "2026-09-06",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 5.0,
+        "unit_price": 122.26
+      },
+      {
+        "line": 2,
+        "description": "Toner imprimante",
+        "quantity": 2.0,
+        "unit_price": 681.63
+      },
+      {
+        "line": 3,
+        "description": "Rame papier A4",
+        "quantity": 4.0,
+        "unit_price": 44.39
+      },
+      {
+        "line": 4,
+        "description": "Emballage carton",
+        "quantity": 4.0,
+        "unit_price": 10.37
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-3070",
+    "supplier_id": "SUP-109",
+    "order_date": "2026-09-04",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 10.0,
+        "unit_price": 106.46
+      },
+      {
+        "line": 2,
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 8.0,
+        "unit_price": 700.97
+      },
+      {
+        "line": 3,
+        "description": "Rame papier A4",
+        "quantity": 4.0,
+        "unit_price": 50.61
+      },
+      {
+        "line": 4,
+        "description": "Emballage carton",
+        "quantity": 6.0,
+        "unit_price": 18.19
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-6998",
+    "supplier_id": "SUP-102",
+    "order_date": "2026-09-11",
+    "currency": "USD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Corrugated boxes 24x18x12",
+        "quantity": 4.0,
+        "unit_price": 1.45
+      },
+      {
+        "line": 2,
+        "description": "Freight handling, pallet",
+        "quantity": 12.0,
+        "unit_price": 84.91
+      },
+      {
+        "line": 3,
+        "description": "Stretch wrap roll 18in",
+        "quantity": 50.0,
+        "unit_price": 24.68
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-1652",
+    "supplier_id": "SUP-104",
+    "order_date": "2026-09-13",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 6.0,
+        "unit_price": 137.02
+      },
+      {
+        "line": 2,
+        "description": "Heure de manutention",
+        "quantity": 4.0,
+        "unit_price": 42.7
+      },
+      {
+        "line": 3,
+        "description": "Carton double cannelure",
+        "quantity": 6.0,
+        "unit_price": 2.18
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-9208",
+    "supplier_id": "SUP-106",
+    "order_date": "2026-08-27",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Ramette papier A4 80g",
+        "quantity": 4.0,
+        "unit_price": 6.11
+      },
+      {
+        "line": 2,
+        "description": "Prestation de maintenance",
+        "quantity": 25.0,
+        "unit_price": 68.07
+      },
+      {
+        "line": 3,
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 8.0,
+        "unit_price": 127.91
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-4098",
+    "supplier_id": "SUP-108",
+    "order_date": "2026-08-20",
+    "currency": "GBP",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Same-day courier, zone 2",
+        "quantity": 10.0,
+        "unit_price": 22.85
+      },
+      {
+        "line": 2,
+        "description": "Courier fuel surcharge",
+        "quantity": 4.0,
+        "unit_price": 8.08
+      },
+      {
+        "line": 3,
+        "description": "Design hours",
+        "quantity": 12.0,
+        "unit_price": 58.27
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-3999",
+    "supplier_id": "SUP-106",
+    "order_date": "2026-09-01",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Carton double cannelure",
+        "quantity": 6.0,
+        "unit_price": 1.83
+      },
+      {
+        "line": 2,
+        "description": "Ramette papier A4 80g",
+        "quantity": 4.0,
+        "unit_price": 6.52
+      },
+      {
+        "line": 3,
+        "description": "Prestation de maintenance",
+        "quantity": 10.0,
+        "unit_price": 115.69
+      },
+      {
+        "line": 4,
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 25.0,
+        "unit_price": 125.59
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-6216",
+    "supplier_id": "SUP-106",
+    "order_date": "2026-08-25",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Cartouche toner noir",
+        "quantity": 12.0,
+        "unit_price": 80.01
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-4461",
+    "supplier_id": "SUP-109",
+    "order_date": "2026-08-24",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Toner imprimante",
+        "quantity": 12.0,
+        "unit_price": 600.47
+      },
+      {
+        "line": 2,
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 25.0,
+        "unit_price": 156.7
+      },
+      {
+        "line": 3,
+        "description": "Rame papier A4",
+        "quantity": 10.0,
+        "unit_price": 38.19
+      },
+      {
+        "line": 4,
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 10.0,
+        "unit_price": 692.26
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-3162",
+    "supplier_id": "SUP-110",
+    "order_date": "2026-09-12",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Rame papier A4",
+        "quantity": 4.0,
+        "unit_price": 49.41
+      },
+      {
+        "line": 2,
+        "description": "Emballage carton",
+        "quantity": 20.0,
+        "unit_price": 11.45
+      },
+      {
+        "line": 3,
+        "description": "Toner imprimante",
+        "quantity": 20.0,
+        "unit_price": 425.59
+      },
+      {
+        "line": 4,
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 4.0,
+        "unit_price": 1207.6
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-6117",
+    "supplier_id": "SUP-110",
+    "order_date": "2026-09-05",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 8.0,
+        "unit_price": 148.07
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-4666",
+    "supplier_id": "SUP-102",
+    "order_date": "2026-08-24",
+    "currency": "USD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Stretch wrap roll 18in",
+        "quantity": 4.0,
+        "unit_price": 19.95
+      },
+      {
+        "line": 2,
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 2.0,
+        "unit_price": 38.25
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-4469",
+    "supplier_id": "SUP-109",
+    "order_date": "2026-09-14",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 25.0,
+        "unit_price": 654.56
+      },
+      {
+        "line": 2,
+        "description": "Emballage carton",
+        "quantity": 5.0,
+        "unit_price": 18.72
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-6293",
+    "supplier_id": "SUP-105",
+    "order_date": "2026-08-21",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Ramette papier A4 80g",
+        "quantity": 50.0,
+        "unit_price": 5.29
+      },
+      {
+        "line": 2,
+        "description": "Carton double cannelure",
+        "quantity": 6.0,
+        "unit_price": 2.63
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-9106",
+    "supplier_id": "SUP-108",
+    "order_date": "2026-09-05",
+    "currency": "GBP",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Courier fuel surcharge",
+        "quantity": 2.0,
+        "unit_price": 5.35
+      },
+      {
+        "line": 2,
+        "description": "Printed flyers A5 (500)",
+        "quantity": 5.0,
+        "unit_price": 60.92
+      },
+      {
+        "line": 3,
+        "description": "Same-day courier, zone 2",
+        "quantity": 2.0,
+        "unit_price": 39.18
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-5337",
+    "supplier_id": "SUP-109",
+    "order_date": "2026-09-06",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Toner imprimante",
+        "quantity": 20.0,
+        "unit_price": 451.18
+      },
+      {
+        "line": 2,
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 50.0,
+        "unit_price": 115.59
+      },
+      {
+        "line": 3,
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 25.0,
+        "unit_price": 1072.73
+      },
+      {
+        "line": 4,
+        "description": "Emballage carton",
+        "quantity": 6.0,
+        "unit_price": 19.23
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-2922",
+    "supplier_id": "SUP-109",
+    "order_date": "2026-08-27",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Toner imprimante",
+        "quantity": 20.0,
+        "unit_price": 451.18
+      },
+      {
+        "line": 2,
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 50.0,
+        "unit_price": 115.59
+      },
+      {
+        "line": 3,
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 25.0,
+        "unit_price": 1072.73
+      },
+      {
+        "line": 4,
+        "description": "Emballage carton",
+        "quantity": 6.0,
+        "unit_price": 19.23
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-7855",
+    "supplier_id": "SUP-109",
+    "order_date": "2026-09-05",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Toner imprimante",
+        "quantity": 6.0,
+        "unit_price": 526.99
+      },
+      {
+        "line": 2,
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 10.0,
+        "unit_price": 149.77
+      },
+      {
+        "line": 3,
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 8.0,
+        "unit_price": 1371.08
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-8718",
+    "supplier_id": "SUP-105",
+    "order_date": "2026-09-06",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Ramette papier A4 80g",
+        "quantity": 2.0,
+        "unit_price": 5.22
+      },
+      {
+        "line": 2,
+        "description": "Carton double cannelure",
+        "quantity": 20.0,
+        "unit_price": 1.66
+      },
+      {
+        "line": 3,
+        "description": "Heure de manutention",
+        "quantity": 6.0,
+        "unit_price": 33.39
+      },
+      {
+        "line": 4,
+        "description": "Cartouche toner noir",
+        "quantity": 25.0,
+        "unit_price": 64.64
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-9939",
+    "supplier_id": "SUP-105",
+    "order_date": "2026-09-02",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Prestation de maintenance",
+        "quantity": 8.0,
+        "unit_price": 112.14
+      },
+      {
+        "line": 2,
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 10.0,
+        "unit_price": 98.0
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-2223",
+    "supplier_id": "SUP-110",
+    "order_date": "2026-08-20",
+    "currency": "MAD",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Emballage carton",
+        "quantity": 8.0,
+        "unit_price": 11.12
+      },
+      {
+        "line": 2,
+        "description": "Toner imprimante",
+        "quantity": 10.0,
+        "unit_price": 438.55
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-5001",
+    "supplier_id": "SUP-103",
+    "order_date": "2026-09-14",
+    "currency": "USD",
+    "status": "closed",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Warehouse labor (hour)",
+        "quantity": 2.0,
+        "unit_price": 40.12
+      },
+      {
+        "line": 2,
+        "description": "Freight handling, pallet",
+        "quantity": 8.0,
+        "unit_price": 70.89
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-7799",
+    "supplier_id": "SUP-106",
+    "order_date": "2026-09-11",
+    "currency": "EUR",
+    "status": "open",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Ramette papier A4 80g",
+        "quantity": 10.0,
+        "unit_price": 6.57
+      },
+      {
+        "line": 2,
+        "description": "Cartouche toner noir",
+        "quantity": 2.0,
+        "unit_price": 85.5
+      },
+      {
+        "line": 3,
+        "description": "Prestation de maintenance",
+        "quantity": 25.0,
+        "unit_price": 110.79
+      }
+    ]
+  },
+  {
+    "po_number": "PO-2026-1753",
+    "supplier_id": "SUP-106",
+    "order_date": "2026-08-25",
+    "currency": "EUR",
+    "status": "closed",
+    "lines": [
+      {
+        "line": 1,
+        "description": "Prestation de maintenance",
+        "quantity": 8.0,
+        "unit_price": 80.23
+      },
+      {
+        "line": 2,
+        "description": "Heure de manutention",
+        "quantity": 2.0,
+        "unit_price": 39.42
+      },
+      {
+        "line": 3,
+        "description": "Ramette papier A4 80g",
+        "quantity": 8.0,
+        "unit_price": 4.5
+      }
+    ]
+  }
+]

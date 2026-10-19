@@ -1,0 +1,57 @@
+{
+  "doc_id": "inv_002",
+  "file": "inv_002.pdf",
+  "layout": "uk",
+  "photo": false,
+  "scenario": "qty_over_received",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "qty_variance"
+    ],
+    "all_policy_reasons": [
+      "qty_variance"
+    ],
+    "po_number": "PO-2026-1829"
+  },
+  "invoice": {
+    "supplier_name": "Thames Valley Couriers Ltd",
+    "supplier_tax_id": "GB632638912",
+    "invoice_number": "TV5290",
+    "invoice_date": "2026-10-04",
+    "due_date": "2026-11-03",
+    "currency": "GBP",
+    "subtotal": 463.37,
+    "tax_rate": 20.0,
+    "tax_amount": 92.67,
+    "total": 556.04,
+    "line_items": [
+      {
+        "description": "Courier fuel surcharge",
+        "quantity": 10.0,
+        "unit_price": 4.59,
+        "amount": 45.9
+      },
+      {
+        "description": "Mailing bags, large (100)",
+        "quantity": 5.0,
+        "unit_price": 14.77,
+        "amount": 73.85
+      },
+      {
+        "description": "Printed flyers A5 (500)",
+        "quantity": 2.0,
+        "unit_price": 46.59,
+        "amount": 93.18
+      },
+      {
+        "description": "Same-day courier, zone 2",
+        "quantity": 6.0,
+        "unit_price": 41.74,
+        "amount": 250.44
+      }
+    ],
+    "po_number": "PO-2026-1829",
+    "bank_account": "Sort code 21-14-63  Account 91905569"
+  }
+}

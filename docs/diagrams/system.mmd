@@ -1,0 +1,39 @@
+flowchart TB
+    IN["Supplier invoice
+    PDF, scan or phone photo"] --> RD["Read
+    qwen2.5vl, local"]
+    RD --> AG{{"AP agent
+    qwen2.5 7B, local
+    plans and calls tools"}}
+
+    subgraph CODE ["Rules in code"]
+        T1["9 invoice checks
+        and duplicates"]
+        T2["Supplier + bank account
+        vs master data"]
+        T3["3-way match
+        PO, goods receipt,
+        already invoiced"]
+    end
+
+    AG <--> T1
+    AG <--> T2
+    AG <--> T3
+    AG --> G{"Guard
+    re-checks everything"}
+
+    G -- "all clean" --> OK(["APPROVE
+    posted, payment date"])
+    G -- "any problem" --> HD(["HOLD
+    reason codes, note,
+    draft email to supplier"])
+    G -- "confirmed duplicate" --> RJ(["REJECT"])
+
+    classDef ok fill:#e6f4ea,stroke:#2e9150,color:#17703a
+    classDef bad fill:#fdecea,stroke:#d93025,color:#b42318
+    classDef hold fill:#fff4e5,stroke:#e8a33d,color:#8a5300
+    classDef model fill:#eef3fb,stroke:#6f8fcf,color:#1f2937
+    class OK ok
+    class RJ bad
+    class HD hold
+    class RD,AG model

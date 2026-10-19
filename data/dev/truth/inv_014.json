@@ -1,0 +1,45 @@
+{
+  "doc_id": "inv_014",
+  "file": "inv_014.pdf",
+  "layout": "ma",
+  "photo": false,
+  "scenario": "price_over_po",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "price_variance"
+    ],
+    "all_policy_reasons": [
+      "price_variance"
+    ],
+    "po_number": "PO-2026-4469"
+  },
+  "invoice": {
+    "supplier_name": "Atlas Transport SARL",
+    "supplier_tax_id": "178437076607908",
+    "invoice_number": "2026/8882",
+    "invoice_date": "2026-10-02",
+    "due_date": "2026-11-16",
+    "currency": "MAD",
+    "subtotal": 16466.05,
+    "tax_rate": 10.0,
+    "tax_amount": 1646.61,
+    "total": 18112.66,
+    "line_items": [
+      {
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 25.0,
+        "unit_price": 654.56,
+        "amount": 16364.0
+      },
+      {
+        "description": "Emballage carton",
+        "quantity": 5.0,
+        "unit_price": 20.41,
+        "amount": 102.05
+      }
+    ],
+    "po_number": "PO-2026-4469",
+    "bank_account": "736 475 3153561486657663 90"
+  }
+}

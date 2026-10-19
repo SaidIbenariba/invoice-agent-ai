@@ -1,0 +1,51 @@
+inv_001: HOLD    not_received                 PO -              7 calls   30.0s
+inv_002: HOLD    qty_variance                 PO -              7 calls   36.6s
+inv_003: APPROVE -                            PO PO-2026-6834   7 calls   33.6s
+inv_004: HOLD    invoice_check_failed         PO -              3 calls   15.2s
+inv_005: APPROVE -                            PO PO-2026-3070   7 calls   35.2s
+inv_006: HOLD    qty_variance                 PO -              7 calls   36.2s
+inv_007: APPROVE -                            PO PO-2026-1652   7 calls   32.0s
+inv_008: HOLD    invoice_check_failed         PO -              3 calls   12.2s
+inv_009: HOLD    price_variance               PO -              9 calls   56.1s
+inv_010: APPROVE -                            PO PO-2026-3999   8 calls   45.4s
+inv_011: HOLD    bank_mismatch                PO -              9 calls   53.0s  guard blocks 1
+inv_012: APPROVE -                            PO PO-2026-3162   9 calls   67.0s
+inv_013: APPROVE -                            PO PO-2026-4666   7 calls   29.5s
+inv_014: HOLD    price_variance               PO -              8 calls   46.8s
+inv_015: HOLD    bank_mismatch                PO -              9 calls   69.5s  guard blocks 1
+inv_016: HOLD    po_mismatch                  PO -              6 calls   31.5s
+inv_017: HOLD    po_ambiguous                 PO -             10 calls   98.4s  guard blocks 1
+inv_018: HOLD    unknown_supplier             PO -              4 calls   13.3s
+inv_019: APPROVE -                            PO PO-2026-7855   7 calls   32.1s
+inv_020: HOLD    po_not_found                 PO -              5 calls   18.3s
+inv_021: APPROVE -                            PO PO-2026-2223   7 calls   30.9s
+inv_022: REJECT  duplicate                    PO -              3 calls   10.1s
+inv_023: APPROVE -                            PO PO-2026-7799   7 calls   31.8s
+inv_024: REJECT  duplicate                    PO -              3 calls   11.3s
+{
+  "invoices": 24,
+  "decisions_correct": 23,
+  "decisions_and_reasons_correct": 23,
+  "wrong_payments": 0,
+  "clean_invoices": 10,
+  "clean_invoices_approved": 9,
+  "problem_invoices": 14,
+  "problem_invoices_stopped": 14,
+  "problem_reason_correct": 14,
+  "po_found_without_valid_reference": "2/3",
+  "duplicates_rejected": "2/2",
+  "guard_blocks": 3,
+  "tool_errors": 0,
+  "avg_tool_calls": 6.6,
+  "avg_agent_seconds": 36.5,
+  "extraction_fully_correct": 24,
+  "header_field_accuracy": 1.0,
+  "line_items_correct": 24,
+  "po_reference_read": 24,
+  "bank_account_read": 24,
+  "avg_extract_seconds": {
+    "text": 45.1,
+    "vision": 62.5
+  }
+}
+report: out/dev/agent/report.json

@@ -1,0 +1,45 @@
+{
+  "doc_id": "inv_022",
+  "file": "inv_022.pdf",
+  "layout": "us",
+  "photo": false,
+  "scenario": "duplicate",
+  "expected": {
+    "decision": "REJECT",
+    "reasons": [
+      "duplicate"
+    ],
+    "all_policy_reasons": [
+      "duplicate"
+    ],
+    "po_number": null
+  },
+  "invoice": {
+    "supplier_name": "Keystone Packaging Co.",
+    "supplier_tax_id": "08-0175319",
+    "invoice_number": "INV-5743",
+    "invoice_date": "2026-10-02",
+    "due_date": "2026-11-01",
+    "currency": "USD",
+    "subtotal": 647.36,
+    "tax_rate": 8.25,
+    "tax_amount": 53.41,
+    "total": 700.77,
+    "line_items": [
+      {
+        "description": "Warehouse labor (hour)",
+        "quantity": 2.0,
+        "unit_price": 40.12,
+        "amount": 80.24
+      },
+      {
+        "description": "Freight handling, pallet",
+        "quantity": 8.0,
+        "unit_price": 70.89,
+        "amount": 567.12
+      }
+    ],
+    "po_number": "PO-2026-5001",
+    "bank_account": "Routing 391603724  Account 7656794183"
+  }
+}

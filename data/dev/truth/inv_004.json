@@ -1,0 +1,57 @@
+{
+  "doc_id": "inv_004",
+  "file": "inv_004.pdf",
+  "layout": "ma",
+  "photo": false,
+  "scenario": "invoice_error",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "invoice_check_failed"
+    ],
+    "all_policy_reasons": [
+      "invoice_check_failed"
+    ],
+    "po_number": "PO-2026-2721"
+  },
+  "invoice": {
+    "supplier_name": "Atlas Transport SARL",
+    "supplier_tax_id": "178437076607908",
+    "invoice_number": "2026/1364",
+    "invoice_date": "2026-09-29",
+    "due_date": "2026-11-13",
+    "currency": "MAD",
+    "subtotal": 2233.6,
+    "tax_rate": 7.0,
+    "tax_amount": 156.35,
+    "total": 2389.95,
+    "line_items": [
+      {
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 5.0,
+        "unit_price": 122.26,
+        "amount": 611.3
+      },
+      {
+        "description": "Toner imprimante",
+        "quantity": 2.0,
+        "unit_price": 681.63,
+        "amount": 1363.26
+      },
+      {
+        "description": "Rame papier A4",
+        "quantity": 4.0,
+        "unit_price": 44.39,
+        "amount": 217.56
+      },
+      {
+        "description": "Emballage carton",
+        "quantity": 4.0,
+        "unit_price": 10.37,
+        "amount": 41.48
+      }
+    ],
+    "po_number": "PO-2026-2721",
+    "bank_account": "736 475 3153561486657663 90"
+  }
+}

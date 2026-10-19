@@ -1,0 +1,52 @@
+{
+  "doc_id": "inv_016",
+  "file": "inv_016.pdf",
+  "layout": "fr",
+  "photo": false,
+  "scenario": "wrong_po",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "po_mismatch"
+    ],
+    "all_policy_reasons": [
+      "po_mismatch",
+      "unmatched_line"
+    ],
+    "po_number": "PO-2026-9106"
+  },
+  "invoice": {
+    "supplier_name": "Bureau Plus Distribution",
+    "supplier_tax_id": "FR49394408006",
+    "invoice_number": "F2026-3723",
+    "invoice_date": "2026-09-18",
+    "due_date": "2026-10-18",
+    "currency": "EUR",
+    "subtotal": 7325.58,
+    "tax_rate": 20.0,
+    "tax_amount": 1465.12,
+    "total": 8790.7,
+    "line_items": [
+      {
+        "description": "Prestation de maintenance",
+        "quantity": 20.0,
+        "unit_price": 102.19,
+        "amount": 2043.8
+      },
+      {
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 50.0,
+        "unit_price": 91.65,
+        "amount": 4582.5
+      },
+      {
+        "description": "Cartouche toner noir",
+        "quantity": 8.0,
+        "unit_price": 87.41,
+        "amount": 699.28
+      }
+    ],
+    "po_number": "PO-2026-9106",
+    "bank_account": "FR76 7072 7675 6990 8300 8933 574"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "doc_id": "inv_005",
+  "file": "inv_005.pdf",
+  "layout": "ma",
+  "photo": false,
+  "scenario": "clean",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-3070"
+  },
+  "invoice": {
+    "supplier_name": "Atlas Transport SARL",
+    "supplier_tax_id": "178437076607908",
+    "invoice_number": "2026/8653",
+    "invoice_date": "2026-09-25",
+    "due_date": "2026-11-09",
+    "currency": "MAD",
+    "subtotal": 6983.94,
+    "tax_rate": 7.0,
+    "tax_amount": 488.88,
+    "total": 7472.82,
+    "line_items": [
+      {
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 10.0,
+        "unit_price": 106.46,
+        "amount": 1064.6
+      },
+      {
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 8.0,
+        "unit_price": 700.97,
+        "amount": 5607.76
+      },
+      {
+        "description": "Rame papier A4",
+        "quantity": 4.0,
+        "unit_price": 50.61,
+        "amount": 202.44
+      },
+      {
+        "description": "Emballage carton",
+        "quantity": 6.0,
+        "unit_price": 18.19,
+        "amount": 109.14
+      }
+    ],
+    "po_number": "PO-2026-3070",
+    "bank_account": "736 475 3153561486657663 90"
+  }
+}

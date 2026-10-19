@@ -1,0 +1,72 @@
+[
+  {
+    "supplier_id": "SUP-104",
+    "invoice_number": "F2026-8236",
+    "invoice_date": "2026-08-14",
+    "total": 1138.12,
+    "currency": "EUR",
+    "po_number": null,
+    "invoiced": {}
+  },
+  {
+    "supplier_id": "SUP-108",
+    "invoice_number": "TV8260",
+    "invoice_date": "2026-08-14",
+    "total": 953.81,
+    "currency": "GBP",
+    "po_number": null,
+    "invoiced": {}
+  },
+  {
+    "supplier_id": "SUP-106",
+    "invoice_number": "F2026-8412",
+    "invoice_date": "2026-08-14",
+    "total": 2000.34,
+    "currency": "EUR",
+    "po_number": null,
+    "invoiced": {}
+  },
+  {
+    "supplier_id": "SUP-110",
+    "invoice_number": "2026/6668",
+    "invoice_date": "2026-08-14",
+    "total": 1595.58,
+    "currency": "MAD",
+    "po_number": null,
+    "invoiced": {}
+  },
+  {
+    "supplier_id": "SUP-103",
+    "invoice_number": "INV-4155",
+    "invoice_date": "2026-08-14",
+    "total": 2896.88,
+    "currency": "USD",
+    "po_number": null,
+    "invoiced": {}
+  },
+  {
+    "supplier_id": "SUP-103",
+    "invoice_number": "INV-5743",
+    "invoice_date": "2026-10-02",
+    "total": 700.77,
+    "currency": "USD",
+    "po_number": "PO-2026-5001",
+    "invoiced": {
+      "1": 2.0,
+      "2": 8.0
+    }
+  },
+  {
+    "supplier_id": "SUP-106",
+    "invoice_number": "F2026-6324",
+    "invoice_date": "2026-09-12",
+    "total": 798.3,
+    "currency": "EUR",
+    "po_number": "PO-2026-1753",
+    "invoiced": {
+      "1": 8.0,
+      "2": 2.0,
+      "3": 8.0
+    }
+  }
+]

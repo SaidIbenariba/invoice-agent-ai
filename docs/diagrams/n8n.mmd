@@ -1,0 +1,25 @@
+flowchart LR
+    S["Schedule
+    every minute"] --> L["GET /inbox
+    unprocessed invoices"]
+    M["Manual run"] --> L
+    L --> SP["Split out
+    one item per invoice"]
+    SP --> P["POST /invoices/process
+    agent decides"]
+    P --> SW{"Switch
+    on decision"}
+    SW -- "APPROVE" --> A["Pay run
+    Sheets or accounting"]
+    SW -- "HOLD" --> H["AP review
+    Slack or email"]
+    SW -- "REJECT" --> R["Rejected log"]
+
+    classDef ok fill:#e6f4ea,stroke:#2e9150,color:#17703a
+    classDef bad fill:#fdecea,stroke:#d93025,color:#b42318
+    classDef hold fill:#fff4e5,stroke:#e8a33d,color:#8a5300
+    classDef model fill:#eef3fb,stroke:#6f8fcf,color:#1f2937
+    class A ok
+    class R bad
+    class H hold
+    class P model
