@@ -1,0 +1,237 @@
+{
+  "doc_id": "inv_010",
+  "file": "inv_010.pdf",
+  "decision": "APPROVE",
+  "reasons": [],
+  "po_number": "PO-2026-2303",
+  "note": "Invoice matches PO and purchase order lines are clean.",
+  "tool_calls": 8,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 55.9,
+  "invoice": {
+    "supplier_name": "Northwind Office Supply Inc.",
+    "supplier_tax_id": "39-1259247",
+    "invoice_number": "INV-4500",
+    "invoice_date": "2026-09-26",
+    "due_date": "2026-10-26",
+    "currency": "USD",
+    "subtotal": 402.42,
+    "tax_rate": 8.25,
+    "tax_amount": 33.2,
+    "total": 435.62,
+    "line_items": [
+      {
+        "description": "Stretch wrap roll 18in",
+        "quantity": 2.0,
+        "unit_price": 26.11,
+        "amount": 52.22
+      },
+      {
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 10.0,
+        "unit_price": 35.02,
+        "amount": 350.2
+      }
+    ],
+    "po_number": "PO-2026-2303",
+    "bank_account": "Routing 580053720 Account 3057833548"
+  },
+  "route": "text",
+  "extract_seconds": 28.9,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Northwind Office Supply Inc.",
+        "supplier_tax_id": "39-1259247",
+        "invoice_number": "INV-4500",
+        "invoice_date": "2026-09-26",
+        "due_date": "2026-10-26",
+        "currency": "USD",
+        "subtotal": 402.42,
+        "tax_rate": 8.25,
+        "tax_amount": 33.2,
+        "total": 435.62,
+        "line_items": [
+          {
+            "description": "Stretch wrap roll 18in",
+            "quantity": 2.0,
+            "unit_price": 26.11,
+            "amount": 52.22
+          },
+          {
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 10.0,
+            "unit_price": 35.02,
+            "amount": 350.2
+          }
+        ],
+        "po_number": "PO-2026-2303",
+        "bank_account": "****3548",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "39-1259247"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-102",
+        "name": "Northwind Office Supply Inc.",
+        "tax_id": "39-1259247",
+        "currency": "USD",
+        "payment_terms_days": 30,
+        "email_on_file": "accounts@northwindofficesup.example",
+        "phone_on_file": "+1 214 555 0111",
+        "bank_account_on_file": "****3548"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-102"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****3548",
+        "on_file": "****3548"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-2303"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-2303",
+        "supplier_id": "SUP-102",
+        "supplier_name": "Northwind Office Supply Inc.",
+        "order_date": "2026-09-02",
+        "currency": "USD",
+        "status": "open",
+        "total": 402.42,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Stretch wrap roll 18in",
+            "quantity": 2.0,
+            "unit_price": 26.11
+          },
+          {
+            "line": 2,
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 10.0,
+            "unit_price": 35.02
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-2303"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-2303",
+        "supplier_id": "SUP-102",
+        "supplier_name": "Northwind Office Supply Inc.",
+        "order_date": "2026-09-02",
+        "currency": "USD",
+        "status": "open",
+        "total": 402.42,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Stretch wrap roll 18in",
+            "quantity": 2.0,
+            "unit_price": 26.11
+          },
+          {
+            "line": 2,
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 10.0,
+            "unit_price": 35.02
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-2303"
+      },
+      "result": {
+        "po_number": "PO-2026-2303",
+        "clean": true,
+        "issues": [],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Stretch wrap roll 18in",
+            "po_line": 1,
+            "po_description": "Stretch wrap roll 18in",
+            "billed_qty": 2.0,
+            "ordered_qty": 2.0,
+            "received_qty": 2.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 26.11,
+            "po_price": 26.11
+          },
+          {
+            "invoice_line": 2,
+            "description": "Shipping labels, 1000 pack",
+            "po_line": 2,
+            "po_description": "Shipping labels, 1000 pack",
+            "billed_qty": 10.0,
+            "ordered_qty": 10.0,
+            "received_qty": 10.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 35.02,
+            "po_price": 35.02
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 8,
+      "tool": "approve_for_payment",
+      "args": {
+        "po_number": "PO-2026-2303",
+        "note": "Invoice matches PO and purchase order lines are clean."
+      },
+      "result": {
+        "approved": true,
+        "scheduled_payment_date": "2026-10-26"
+      },
+      "seconds": 0.02
+    }
+  ]
+}

@@ -108,8 +108,9 @@ right.markdown("**Agent trail**")
 for n, step in enumerate(c["steps"], 1):
     who = step.get("by", "agent")
     res = step["result"]
+    refused = res.get("approved") is False or res.get("rejected") is False
     with right.expander(f"{n}. {step['tool']}({', '.join(f'{k}={v}' for k, v in step['args'].items() if k != 'note')})"
-                        + ("" if who == "agent" else f" · by {who}")):
+                        + ("" if who == "agent" else f" · by {who}") + (" · ⛔ refused by the guard" if refused else "")):
         st.json(res)
 
 mine = [d for d in drafts if d["doc_id"] == c["doc_id"]]

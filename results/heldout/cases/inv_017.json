@@ -1,0 +1,321 @@
+{
+  "doc_id": "inv_017",
+  "file": "inv_017.pdf",
+  "decision": "HOLD",
+  "reasons": [
+    "qty_variance"
+  ],
+  "po_number": null,
+  "note": "Quantity variance on line 2: billed 6, received 4. At most 4 can be paid.",
+  "tool_calls": 8,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 67.1,
+  "invoice": {
+    "supplier_name": "Northwind Office Supply Inc.",
+    "supplier_tax_id": "39-1259247",
+    "invoice_number": "INV-8021",
+    "invoice_date": "2026-09-14",
+    "due_date": "2026-10-14",
+    "currency": "USD",
+    "subtotal": 524.26,
+    "tax_rate": 8.25,
+    "tax_amount": 43.25,
+    "total": 567.51,
+    "line_items": [
+      {
+        "description": "Corrugated boxes 24x18x12",
+        "quantity": 6.0,
+        "unit_price": 3.33,
+        "amount": 19.98
+      },
+      {
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 6.0,
+        "unit_price": 28.08,
+        "amount": 168.48
+      },
+      {
+        "description": "Stretch wrap roll 18in",
+        "quantity": 8.0,
+        "unit_price": 18.75,
+        "amount": 150.0
+      },
+      {
+        "description": "Warehouse labor (hour)",
+        "quantity": 5.0,
+        "unit_price": 37.16,
+        "amount": 185.8
+      }
+    ],
+    "po_number": "PO-2026-8052",
+    "bank_account": "Routing 580053720 Account 3057833548"
+  },
+  "route": "text",
+  "extract_seconds": 59.8,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Northwind Office Supply Inc.",
+        "supplier_tax_id": "39-1259247",
+        "invoice_number": "INV-8021",
+        "invoice_date": "2026-09-14",
+        "due_date": "2026-10-14",
+        "currency": "USD",
+        "subtotal": 524.26,
+        "tax_rate": 8.25,
+        "tax_amount": 43.25,
+        "total": 567.51,
+        "line_items": [
+          {
+            "description": "Corrugated boxes 24x18x12",
+            "quantity": 6.0,
+            "unit_price": 3.33,
+            "amount": 19.98
+          },
+          {
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 6.0,
+            "unit_price": 28.08,
+            "amount": 168.48
+          },
+          {
+            "description": "Stretch wrap roll 18in",
+            "quantity": 8.0,
+            "unit_price": 18.75,
+            "amount": 150.0
+          },
+          {
+            "description": "Warehouse labor (hour)",
+            "quantity": 5.0,
+            "unit_price": 37.16,
+            "amount": 185.8
+          }
+        ],
+        "po_number": "PO-2026-8052",
+        "bank_account": "****3548",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "39-1259247"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-102",
+        "name": "Northwind Office Supply Inc.",
+        "tax_id": "39-1259247",
+        "currency": "USD",
+        "payment_terms_days": 30,
+        "email_on_file": "accounts@northwindofficesup.example",
+        "phone_on_file": "+1 214 555 0111",
+        "bank_account_on_file": "****3548"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-102"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****3548",
+        "on_file": "****3548"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-8052"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-8052",
+        "supplier_id": "SUP-102",
+        "supplier_name": "Northwind Office Supply Inc.",
+        "order_date": "2026-08-29",
+        "currency": "USD",
+        "status": "open",
+        "total": 524.26,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Corrugated boxes 24x18x12",
+            "quantity": 6.0,
+            "unit_price": 3.33
+          },
+          {
+            "line": 2,
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 6.0,
+            "unit_price": 28.08
+          },
+          {
+            "line": 3,
+            "description": "Stretch wrap roll 18in",
+            "quantity": 8.0,
+            "unit_price": 18.75
+          },
+          {
+            "line": 4,
+            "description": "Warehouse labor (hour)",
+            "quantity": 5.0,
+            "unit_price": 37.16
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-8052"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-8052",
+        "supplier_id": "SUP-102",
+        "supplier_name": "Northwind Office Supply Inc.",
+        "order_date": "2026-08-29",
+        "currency": "USD",
+        "status": "open",
+        "total": 524.26,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Corrugated boxes 24x18x12",
+            "quantity": 6.0,
+            "unit_price": 3.33
+          },
+          {
+            "line": 2,
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 6.0,
+            "unit_price": 28.08
+          },
+          {
+            "line": 3,
+            "description": "Stretch wrap roll 18in",
+            "quantity": 8.0,
+            "unit_price": 18.75
+          },
+          {
+            "line": 4,
+            "description": "Warehouse labor (hour)",
+            "quantity": 5.0,
+            "unit_price": 37.16
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-8052"
+      },
+      "result": {
+        "po_number": "PO-2026-8052",
+        "clean": false,
+        "issues": [
+          {
+            "code": "qty_variance",
+            "message": "line 2: billed 6, received 4 -> at most 4 can be paid"
+          }
+        ],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Corrugated boxes 24x18x12",
+            "po_line": 1,
+            "po_description": "Corrugated boxes 24x18x12",
+            "billed_qty": 6.0,
+            "ordered_qty": 6.0,
+            "received_qty": 6.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 3.33,
+            "po_price": 3.33
+          },
+          {
+            "invoice_line": 2,
+            "description": "Shipping labels, 1000 pack",
+            "po_line": 2,
+            "po_description": "Shipping labels, 1000 pack",
+            "billed_qty": 6.0,
+            "ordered_qty": 6.0,
+            "received_qty": 4.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 28.08,
+            "po_price": 28.08
+          },
+          {
+            "invoice_line": 3,
+            "description": "Stretch wrap roll 18in",
+            "po_line": 3,
+            "po_description": "Stretch wrap roll 18in",
+            "billed_qty": 8.0,
+            "ordered_qty": 8.0,
+            "received_qty": 8.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 18.75,
+            "po_price": 18.75
+          },
+          {
+            "invoice_line": 4,
+            "description": "Warehouse labor (hour)",
+            "po_line": 4,
+            "po_description": "Warehouse labor (hour)",
+            "billed_qty": 5.0,
+            "ordered_qty": 5.0,
+            "received_qty": 5.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 37.16,
+            "po_price": 37.16
+          }
+        ],
+        "next_step": "Do not approve against this PO. If you are checking candidates from search_purchase_orders, try the next one; otherwise call hold_for_review with these issue codes."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 8,
+      "tool": "hold_for_review",
+      "args": {
+        "note": "Quantity variance on line 2: billed 6, received 4. At most 4 can be paid.",
+        "reasons": [
+          "qty_variance"
+        ]
+      },
+      "result": {
+        "on_hold": true,
+        "reasons": [
+          "qty_variance"
+        ]
+      },
+      "seconds": 0.01
+    }
+  ]
+}

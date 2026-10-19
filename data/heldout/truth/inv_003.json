@@ -1,0 +1,51 @@
+{
+  "doc_id": "inv_003",
+  "file": "inv_003.pdf",
+  "layout": "uk",
+  "photo": false,
+  "scenario": "duplicate",
+  "expected": {
+    "decision": "REJECT",
+    "reasons": [
+      "duplicate"
+    ],
+    "all_policy_reasons": [
+      "duplicate"
+    ],
+    "po_number": null
+  },
+  "invoice": {
+    "supplier_name": "Pennine Print & Pack Ltd",
+    "supplier_tax_id": "GB633505809",
+    "invoice_number": "TV5532",
+    "invoice_date": "2026-09-28",
+    "due_date": "2026-10-28",
+    "currency": "GBP",
+    "subtotal": 1118.32,
+    "tax_rate": 20.0,
+    "tax_amount": 223.66,
+    "total": 1341.98,
+    "line_items": [
+      {
+        "description": "Same-day courier, zone 2",
+        "quantity": 12.0,
+        "unit_price": 38.91,
+        "amount": 466.92
+      },
+      {
+        "description": "Design hours",
+        "quantity": 6.0,
+        "unit_price": 58.8,
+        "amount": 352.8
+      },
+      {
+        "description": "Printed flyers A5 (500)",
+        "quantity": 4.0,
+        "unit_price": 74.65,
+        "amount": 298.6
+      }
+    ],
+    "po_number": "PO-2026-5309",
+    "bank_account": "Sort code 67-55-90  Account 90572883"
+  }
+}

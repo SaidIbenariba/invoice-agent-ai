@@ -1,0 +1,92 @@
+[
+  {
+    "supplier_id": "SUP-101",
+    "name": "Brightline Logistics LLC",
+    "tax_id": "04-8724948",
+    "bank_account": "Routing 645759304  Account 0673984398",
+    "currency": "USD",
+    "terms_days": 45,
+    "email": "accounts@brightlinelogistic.example",
+    "phone": "+1 214 555 0110"
+  },
+  {
+    "supplier_id": "SUP-102",
+    "name": "Northwind Office Supply Inc.",
+    "tax_id": "39-1259247",
+    "bank_account": "Routing 580053720  Account 3057833548",
+    "currency": "USD",
+    "terms_days": 30,
+    "email": "accounts@northwindofficesup.example",
+    "phone": "+1 214 555 0111"
+  },
+  {
+    "supplier_id": "SUP-103",
+    "name": "Keystone Packaging Co.",
+    "tax_id": "56-6244254",
+    "bank_account": "Routing 306997884  Account 5912033678",
+    "currency": "USD",
+    "terms_days": 45,
+    "email": "accounts@keystonepackagingc.example",
+    "phone": "+1 214 555 0112"
+  },
+  {
+    "supplier_id": "SUP-104",
+    "name": "Atelier Durand SARL",
+    "tax_id": "FR53274960816",
+    "bank_account": "FR76 0294 4206 7739 3870 7681 612",
+    "currency": "EUR",
+    "terms_days": 45,
+    "email": "accounts@atelierdurandsarl.example",
+    "phone": "+33 1 99 00 13 10"
+  },
+  {
+    "supplier_id": "SUP-105",
+    "name": "Transports Lefèvre SAS",
+    "tax_id": "FR23544127928",
+    "bank_account": "FR76 5539 0409 1565 1619 1035 952",
+    "currency": "EUR",
+    "terms_days": 45,
+    "email": "accounts@transportslefèvres.example",
+    "phone": "+33 1 99 00 14 10"
+  },
+  {
+    "supplier_id": "SUP-106",
+    "name": "Bureau Plus Distribution",
+    "tax_id": "FR83885301023",
+    "bank_account": "FR76 3344 7956 8497 6202 4452 413",
+    "currency": "EUR",
+    "terms_days": 45,
+    "email": "accounts@bureauplusdistribu.example",
+    "phone": "+33 1 99 00 15 10"
+  },
+  {
+    "supplier_id": "SUP-108",
+    "name": "Pennine Print & Pack Ltd",
+    "tax_id": "GB633505809",
+    "bank_account": "Sort code 67-55-90  Account 90572883",
+    "currency": "GBP",
+    "terms_days": 30,
+    "email": "accounts@pennineprintpacklt.example",
+    "phone": "+44 118 496 0017"
+  },
+  {
+    "supplier_id": "SUP-109",
+    "name": "Atlas Transport SARL",
+    "tax_id": "472780809078618",
+    "bank_account": "047 309 9875154852017834 82",
+    "currency": "MAD",
+    "terms_days": 30,
+    "email": "accounts@atlastransportsarl.example",
+    "phone": "+212 537 00 18 10"
+  },
+  {
+    "supplier_id": "SUP-110",
+    "name": "Bureautique Rabat SARL",
+    "tax_id": "326427746127808",
+    "bank_account": "661 914 8939501274705891 24",
+    "currency": "MAD",
+    "terms_days": 30,
+    "email": "accounts@bureautiquerabatsa.example",
+    "phone": "+212 537 00 19 10"
+  }
+]

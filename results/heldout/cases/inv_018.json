@@ -1,0 +1,321 @@
+{
+  "doc_id": "inv_018",
+  "file": "inv_018.pdf",
+  "decision": "HOLD",
+  "reasons": [
+    "not_received"
+  ],
+  "po_number": null,
+  "note": "PO-2026-1292 has no goods receipts recorded, indicating that the goods have not been received.",
+  "tool_calls": 8,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 56.2,
+  "invoice": {
+    "supplier_name": "Brightline Logistics LLC",
+    "supplier_tax_id": "04-8724948",
+    "invoice_number": "INV-1882",
+    "invoice_date": "2026-09-26",
+    "due_date": "2026-11-10",
+    "currency": "USD",
+    "subtotal": 3006.43,
+    "tax_rate": 0.0,
+    "tax_amount": 0.0,
+    "total": 3006.43,
+    "line_items": [
+      {
+        "description": "Stretch wrap roll 18in",
+        "quantity": 6.0,
+        "unit_price": 31.74,
+        "amount": 190.44
+      },
+      {
+        "description": "Corrugated boxes 24x18x12",
+        "quantity": 8.0,
+        "unit_price": 2.83,
+        "amount": 22.64
+      },
+      {
+        "description": "Freight handling, pallet",
+        "quantity": 25.0,
+        "unit_price": 83.91,
+        "amount": 2097.75
+      },
+      {
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 20.0,
+        "unit_price": 34.78,
+        "amount": 695.6
+      }
+    ],
+    "po_number": "PO-2026-1292",
+    "bank_account": "Routing 645759304 Account 0673984398"
+  },
+  "route": "text",
+  "extract_seconds": 50.0,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Brightline Logistics LLC",
+        "supplier_tax_id": "04-8724948",
+        "invoice_number": "INV-1882",
+        "invoice_date": "2026-09-26",
+        "due_date": "2026-11-10",
+        "currency": "USD",
+        "subtotal": 3006.43,
+        "tax_rate": 0.0,
+        "tax_amount": 0.0,
+        "total": 3006.43,
+        "line_items": [
+          {
+            "description": "Stretch wrap roll 18in",
+            "quantity": 6.0,
+            "unit_price": 31.74,
+            "amount": 190.44
+          },
+          {
+            "description": "Corrugated boxes 24x18x12",
+            "quantity": 8.0,
+            "unit_price": 2.83,
+            "amount": 22.64
+          },
+          {
+            "description": "Freight handling, pallet",
+            "quantity": 25.0,
+            "unit_price": 83.91,
+            "amount": 2097.75
+          },
+          {
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 20.0,
+            "unit_price": 34.78,
+            "amount": 695.6
+          }
+        ],
+        "po_number": "PO-2026-1292",
+        "bank_account": "****4398",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "04-8724948"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-101",
+        "name": "Brightline Logistics LLC",
+        "tax_id": "04-8724948",
+        "currency": "USD",
+        "payment_terms_days": 45,
+        "email_on_file": "accounts@brightlinelogistic.example",
+        "phone_on_file": "+1 214 555 0110",
+        "bank_account_on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-101"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****4398",
+        "on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-1292"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-1292",
+        "supplier_id": "SUP-101",
+        "supplier_name": "Brightline Logistics LLC",
+        "order_date": "2026-09-02",
+        "currency": "USD",
+        "status": "open",
+        "total": 3006.43,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Stretch wrap roll 18in",
+            "quantity": 6.0,
+            "unit_price": 31.74
+          },
+          {
+            "line": 2,
+            "description": "Corrugated boxes 24x18x12",
+            "quantity": 8.0,
+            "unit_price": 2.83
+          },
+          {
+            "line": 3,
+            "description": "Freight handling, pallet",
+            "quantity": 25.0,
+            "unit_price": 83.91
+          },
+          {
+            "line": 4,
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 20.0,
+            "unit_price": 34.78
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-1292"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-1292",
+        "supplier_id": "SUP-101",
+        "supplier_name": "Brightline Logistics LLC",
+        "order_date": "2026-09-02",
+        "currency": "USD",
+        "status": "open",
+        "total": 3006.43,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Stretch wrap roll 18in",
+            "quantity": 6.0,
+            "unit_price": 31.74
+          },
+          {
+            "line": 2,
+            "description": "Corrugated boxes 24x18x12",
+            "quantity": 8.0,
+            "unit_price": 2.83
+          },
+          {
+            "line": 3,
+            "description": "Freight handling, pallet",
+            "quantity": 25.0,
+            "unit_price": 83.91
+          },
+          {
+            "line": 4,
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 20.0,
+            "unit_price": 34.78
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-1292"
+      },
+      "result": {
+        "po_number": "PO-2026-1292",
+        "clean": false,
+        "issues": [
+          {
+            "code": "not_received",
+            "message": "no goods receipt recorded for PO-2026-1292"
+          }
+        ],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Stretch wrap roll 18in",
+            "po_line": 1,
+            "po_description": "Stretch wrap roll 18in",
+            "billed_qty": 6.0,
+            "ordered_qty": 6.0,
+            "received_qty": 0.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 31.74,
+            "po_price": 31.74
+          },
+          {
+            "invoice_line": 2,
+            "description": "Corrugated boxes 24x18x12",
+            "po_line": 2,
+            "po_description": "Corrugated boxes 24x18x12",
+            "billed_qty": 8.0,
+            "ordered_qty": 8.0,
+            "received_qty": 0.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 2.83,
+            "po_price": 2.83
+          },
+          {
+            "invoice_line": 3,
+            "description": "Freight handling, pallet",
+            "po_line": 3,
+            "po_description": "Freight handling, pallet",
+            "billed_qty": 25.0,
+            "ordered_qty": 25.0,
+            "received_qty": 0.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 83.91,
+            "po_price": 83.91
+          },
+          {
+            "invoice_line": 4,
+            "description": "Shipping labels, 1000 pack",
+            "po_line": 4,
+            "po_description": "Shipping labels, 1000 pack",
+            "billed_qty": 20.0,
+            "ordered_qty": 20.0,
+            "received_qty": 0.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 34.78,
+            "po_price": 34.78
+          }
+        ],
+        "next_step": "Do not approve against this PO. If you are checking candidates from search_purchase_orders, try the next one; otherwise call hold_for_review with these issue codes."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 8,
+      "tool": "hold_for_review",
+      "args": {
+        "reasons": [
+          "not_received"
+        ],
+        "note": "PO-2026-1292 has no goods receipts recorded, indicating that the goods have not been received."
+      },
+      "result": {
+        "on_hold": true,
+        "reasons": [
+          "not_received"
+        ]
+      },
+      "seconds": 0.0
+    }
+  ]
+}

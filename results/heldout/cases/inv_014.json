@@ -1,0 +1,138 @@
+{
+  "doc_id": "inv_014",
+  "file": "inv_014.pdf",
+  "decision": "HOLD",
+  "reasons": [
+    "invoice_check_failed"
+  ],
+  "po_number": null,
+  "note": "Tax calculation discrepancy: expected 111.33, got 70.85.",
+  "tool_calls": 3,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 17.0,
+  "invoice": {
+    "supplier_name": "Transports Lefèvre SAS",
+    "supplier_tax_id": "FR23544127928",
+    "invoice_number": "F2026-2901",
+    "invoice_date": "2026-09-14",
+    "due_date": "2026-10-29",
+    "currency": "EUR",
+    "subtotal": 2024.22,
+    "tax_rate": 5.5,
+    "tax_amount": 70.85,
+    "total": 2095.07,
+    "line_items": [
+      {
+        "description": "Transport palette Lyon-Paris",
+        "quantity": 10.0,
+        "unit_price": 100.61,
+        "amount": 1006.1
+      },
+      {
+        "description": "Heure de manutention",
+        "quantity": 4.0,
+        "unit_price": 36.65,
+        "amount": 146.6
+      },
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 25.0,
+        "unit_price": 5.0,
+        "amount": 125.0
+      },
+      {
+        "description": "Cartouche toner noir",
+        "quantity": 12.0,
+        "unit_price": 62.21,
+        "amount": 746.52
+      }
+    ],
+    "po_number": "PO-2026-8770",
+    "bank_account": "FR76 5539 0409 1565 1619 1035 952"
+  },
+  "route": "text",
+  "extract_seconds": 56.7,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Transports Lefèvre SAS",
+        "supplier_tax_id": "FR23544127928",
+        "invoice_number": "F2026-2901",
+        "invoice_date": "2026-09-14",
+        "due_date": "2026-10-29",
+        "currency": "EUR",
+        "subtotal": 2024.22,
+        "tax_rate": 5.5,
+        "tax_amount": 70.85,
+        "total": 2095.07,
+        "line_items": [
+          {
+            "description": "Transport palette Lyon-Paris",
+            "quantity": 10.0,
+            "unit_price": 100.61,
+            "amount": 1006.1
+          },
+          {
+            "description": "Heure de manutention",
+            "quantity": 4.0,
+            "unit_price": 36.65,
+            "amount": 146.6
+          },
+          {
+            "description": "Ramette papier A4 80g",
+            "quantity": 25.0,
+            "unit_price": 5.0,
+            "amount": 125.0
+          },
+          {
+            "description": "Cartouche toner noir",
+            "quantity": 12.0,
+            "unit_price": 62.21,
+            "amount": 746.52
+          }
+        ],
+        "po_number": "PO-2026-8770",
+        "bank_account": "****5952",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": false,
+        "issues": [
+          {
+            "code": "invoice_check_failed",
+            "message": "5.5% of 2024.22 = 111.33, invoice says 70.85"
+          }
+        ],
+        "next_step": "Call hold_for_review with reason invoice_check_failed."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "hold_for_review",
+      "args": {
+        "reasons": [
+          "invoice_check_failed"
+        ],
+        "note": "Tax calculation discrepancy: expected 111.33, got 70.85."
+      },
+      "result": {
+        "on_hold": true,
+        "reasons": [
+          "invoice_check_failed"
+        ]
+      },
+      "seconds": 0.0
+    }
+  ]
+}

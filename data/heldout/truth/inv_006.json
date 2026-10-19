@@ -1,0 +1,41 @@
+{
+  "doc_id": "inv_006",
+  "file": "inv_006.pdf",
+  "layout": "fr",
+  "photo": false,
+  "scenario": "clean",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-8634"
+  },
+  "invoice": {
+    "supplier_name": "Atelier Durand SARL",
+    "supplier_tax_id": "FR53274960816",
+    "invoice_number": "F2026-3878",
+    "invoice_date": "2026-09-28",
+    "due_date": "2026-11-12",
+    "currency": "EUR",
+    "subtotal": 228.38,
+    "tax_rate": 20.0,
+    "tax_amount": 45.68,
+    "total": 274.06,
+    "line_items": [
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 2.0,
+        "unit_price": 6.17,
+        "amount": 12.34
+      },
+      {
+        "description": "Cartouche toner noir",
+        "quantity": 4.0,
+        "unit_price": 54.01,
+        "amount": 216.04
+      }
+    ],
+    "po_number": "PO-2026-8634",
+    "bank_account": "FR76 0294 4206 7739 3870 7681 612"
+  }
+}

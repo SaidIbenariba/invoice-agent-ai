@@ -16,7 +16,7 @@ URL = "http://localhost:8501"
 def main(doc_id: str, out: str) -> None:
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        page = browser.new_page(viewport={"width": 1500, "height": 1000}, device_scale_factor=2)
+        page = browser.new_page(viewport={"width": 1500, "height": 1250}, device_scale_factor=2)
         page.goto(URL)
         page.wait_for_selector("text=Invoice Agent AI", timeout=60000)
         page.get_by_text(doc_id, exact=False).first.click()

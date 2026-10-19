@@ -1,0 +1,583 @@
+[
+  {
+    "receipt_id": "GR-9906-1",
+    "po_number": "PO-2026-9906",
+    "received_date": "2026-09-21",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 2.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 50.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-2387-2",
+    "po_number": "PO-2026-2387",
+    "received_date": "2026-09-01",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 20.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 4.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-9967-3",
+    "po_number": "PO-2026-9967",
+    "received_date": "2026-09-02",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 5.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 2.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 12.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-8625-4",
+    "po_number": "PO-2026-8625",
+    "received_date": "2026-08-31",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 2.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-4629-5",
+    "po_number": "PO-2026-4629",
+    "received_date": "2026-09-15",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 4.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 8.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 6.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-8595-6",
+    "po_number": "PO-2026-8595",
+    "received_date": "2026-09-09",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 5.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 10.0
+      },
+      {
+        "line": 4,
+        "quantity_received": 5.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-8535-7",
+    "po_number": "PO-2026-8535",
+    "received_date": "2026-09-12",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 12.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 25.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-9061-8",
+    "po_number": "PO-2026-9061",
+    "received_date": "2026-09-06",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 20.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 10.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 10.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-6785-9",
+    "po_number": "PO-2026-6785",
+    "received_date": "2026-09-13",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 5.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 6.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-1442-10",
+    "po_number": "PO-2026-1442",
+    "received_date": "2026-08-29",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 20.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-5309-11",
+    "po_number": "PO-2026-5309",
+    "received_date": "2026-09-11",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 12.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 6.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 4.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-6584-12",
+    "po_number": "PO-2026-6584",
+    "received_date": "2026-09-10",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 20.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 2.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 4,
+        "quantity_received": 2.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-9487-13",
+    "po_number": "PO-2026-9487",
+    "received_date": "2026-09-03",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 50.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-8634-14",
+    "po_number": "PO-2026-8634",
+    "received_date": "2026-09-23",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 2.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 4.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-3107-15",
+    "po_number": "PO-2026-3107",
+    "received_date": "2026-09-11",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 5.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 4,
+        "quantity_received": 50.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-3454-16",
+    "po_number": "PO-2026-3454",
+    "received_date": "2026-09-15",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 20.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 25.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-1521-17",
+    "po_number": "PO-2026-1521",
+    "received_date": "2026-08-28",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 20.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 8.0
+      },
+      {
+        "line": 4,
+        "quantity_received": 50.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-2303-18",
+    "po_number": "PO-2026-2303",
+    "received_date": "2026-09-09",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 2.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 10.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-5507-19",
+    "po_number": "PO-2026-5507",
+    "received_date": "2026-09-02",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 8.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 12.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 4.0
+      },
+      {
+        "line": 4,
+        "quantity_received": 12.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-8890-20",
+    "po_number": "PO-2026-8890",
+    "received_date": "2026-08-27",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 5.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 4.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 20.0
+      },
+      {
+        "line": 4,
+        "quantity_received": 5.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-6070-21",
+    "po_number": "PO-2026-6070",
+    "received_date": "2026-08-25",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 5.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 4.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 20.0
+      },
+      {
+        "line": 4,
+        "quantity_received": 5.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-2519-22",
+    "po_number": "PO-2026-2519",
+    "received_date": "2026-09-20",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 12.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 10.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 20.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-8770-23",
+    "po_number": "PO-2026-8770",
+    "received_date": "2026-08-28",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 10.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 4.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 4,
+        "quantity_received": 12.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-6751-24",
+    "po_number": "PO-2026-6751",
+    "received_date": "2026-09-20",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 2.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 5.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 4.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-9177-25",
+    "po_number": "PO-2026-9177",
+    "received_date": "2026-09-01",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 2.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 1.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-8052-26",
+    "po_number": "PO-2026-8052",
+    "received_date": "2026-09-07",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 6.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 4.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 8.0
+      },
+      {
+        "line": 4,
+        "quantity_received": 5.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-7257-27",
+    "po_number": "PO-2026-7257",
+    "received_date": "2026-09-10",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 20.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 50.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 20.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-4262-28",
+    "po_number": "PO-2026-4262",
+    "received_date": "2026-09-13",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 2.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 10.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-6694-29",
+    "po_number": "PO-2026-6694",
+    "received_date": "2026-09-08",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 8.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 25.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 6.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-3645-30",
+    "po_number": "PO-2026-3645",
+    "received_date": "2026-09-15",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 6.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 5.0
+      },
+      {
+        "line": 3,
+        "quantity_received": 25.0
+      }
+    ]
+  },
+  {
+    "receipt_id": "GR-1746-31",
+    "po_number": "PO-2026-1746",
+    "received_date": "2026-09-14",
+    "lines": [
+      {
+        "line": 1,
+        "quantity_received": 2.0
+      },
+      {
+        "line": 2,
+        "quantity_received": 15.0
+      }
+    ]
+  }
+]

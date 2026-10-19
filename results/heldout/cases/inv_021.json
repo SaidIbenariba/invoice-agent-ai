@@ -1,0 +1,447 @@
+{
+  "doc_id": "inv_021",
+  "file": "inv_021.jpg",
+  "decision": "APPROVE",
+  "reasons": [],
+  "po_number": "PO-2026-6694",
+  "note": "Invoice matches PO-2026-6694 without issues.",
+  "tool_calls": 8,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 66.7,
+  "invoice": {
+    "supplier_name": "Transports Lefèvre SAS",
+    "supplier_tax_id": "FR23544127928",
+    "invoice_number": "F2026-3404",
+    "invoice_date": "2026-09-26",
+    "due_date": "2026-11-10",
+    "currency": "EUR",
+    "subtotal": 1849.76,
+    "tax_rate": 20.0,
+    "tax_amount": 369.95,
+    "total": 2219.71,
+    "line_items": [
+      {
+        "description": "Prestation de maintenance",
+        "quantity": 8.0,
+        "unit_price": 119.35,
+        "amount": 954.8
+      },
+      {
+        "description": "Heure de manutention",
+        "quantity": 25.0,
+        "unit_price": 34.02,
+        "amount": 850.5
+      },
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 6.0,
+        "unit_price": 7.41,
+        "amount": 44.46
+      }
+    ],
+    "po_number": null,
+    "bank_account": "FR76 5539 0409 1565 1619 1035 952"
+  },
+  "route": "vision",
+  "extract_seconds": 81.0,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Transports Lefèvre SAS",
+        "supplier_tax_id": "FR23544127928",
+        "invoice_number": "F2026-3404",
+        "invoice_date": "2026-09-26",
+        "due_date": "2026-11-10",
+        "currency": "EUR",
+        "subtotal": 1849.76,
+        "tax_rate": 20.0,
+        "tax_amount": 369.95,
+        "total": 2219.71,
+        "line_items": [
+          {
+            "description": "Prestation de maintenance",
+            "quantity": 8.0,
+            "unit_price": 119.35,
+            "amount": 954.8
+          },
+          {
+            "description": "Heure de manutention",
+            "quantity": 25.0,
+            "unit_price": 34.02,
+            "amount": 850.5
+          },
+          {
+            "description": "Ramette papier A4 80g",
+            "quantity": 6.0,
+            "unit_price": 7.41,
+            "amount": 44.46
+          }
+        ],
+        "po_number": null,
+        "bank_account": "****5952",
+        "missing": [
+          "po_number"
+        ],
+        "next_step": "No PO number on this invoice. After find_supplier, call search_purchase_orders and three_way_match on each open PO; approve only if exactly one is clean."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "FR23544127928"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-105",
+        "name": "Transports Lefèvre SAS",
+        "tax_id": "FR23544127928",
+        "currency": "EUR",
+        "payment_terms_days": 45,
+        "email_on_file": "accounts@transportslefèvres.example",
+        "phone_on_file": "+33 1 99 00 14 10",
+        "bank_account_on_file": "****5952"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-105"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****5952",
+        "on_file": "****5952"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "search_purchase_orders",
+      "args": {
+        "supplier_id": "SUP-105"
+      },
+      "result": {
+        "open_purchase_orders": [
+          {
+            "po_number": "PO-2026-8625",
+            "supplier_id": "SUP-105",
+            "supplier_name": "Transports Lefèvre SAS",
+            "order_date": "2026-08-26",
+            "currency": "EUR",
+            "status": "open",
+            "total": 118.34,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Carton double cannelure",
+                "quantity": 25.0,
+                "unit_price": 2.12
+              },
+              {
+                "line": 2,
+                "description": "Heure de manutention",
+                "quantity": 2.0,
+                "unit_price": 32.67
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-3107",
+            "supplier_id": "SUP-105",
+            "supplier_name": "Transports Lefèvre SAS",
+            "order_date": "2026-09-05",
+            "currency": "EUR",
+            "status": "open",
+            "total": 6947.65,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Ramette papier A4 80g",
+                "quantity": 5.0,
+                "unit_price": 6.33
+              },
+              {
+                "line": 2,
+                "description": "Prestation de maintenance",
+                "quantity": 25.0,
+                "unit_price": 71.93
+              },
+              {
+                "line": 3,
+                "description": "Carton double cannelure",
+                "quantity": 25.0,
+                "unit_price": 1.85
+              },
+              {
+                "line": 4,
+                "description": "Transport palette Lyon-Paris",
+                "quantity": 50.0,
+                "unit_price": 101.43
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-5507",
+            "supplier_id": "SUP-105",
+            "supplier_name": "Transports Lefèvre SAS",
+            "order_date": "2026-08-28",
+            "currency": "EUR",
+            "status": "open",
+            "total": 2017.32,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Transport palette Lyon-Paris",
+                "quantity": 8.0,
+                "unit_price": 103.78
+              },
+              {
+                "line": 2,
+                "description": "Ramette papier A4 80g",
+                "quantity": 12.0,
+                "unit_price": 5.1
+              },
+              {
+                "line": 3,
+                "description": "Heure de manutention",
+                "quantity": 4.0,
+                "unit_price": 47.98
+              },
+              {
+                "line": 4,
+                "description": "Prestation de maintenance",
+                "quantity": 12.0,
+                "unit_price": 77.83
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-9515",
+            "supplier_id": "SUP-105",
+            "supplier_name": "Transports Lefèvre SAS",
+            "order_date": "2026-08-24",
+            "currency": "EUR",
+            "status": "open",
+            "total": 3544.25,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Carton double cannelure",
+                "quantity": 5.0,
+                "unit_price": 1.45
+              },
+              {
+                "line": 2,
+                "description": "Cartouche toner noir",
+                "quantity": 50.0,
+                "unit_price": 70.74
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-8770",
+            "supplier_id": "SUP-105",
+            "supplier_name": "Transports Lefèvre SAS",
+            "order_date": "2026-08-21",
+            "currency": "EUR",
+            "status": "open",
+            "total": 2024.22,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Transport palette Lyon-Paris",
+                "quantity": 10.0,
+                "unit_price": 100.61
+              },
+              {
+                "line": 2,
+                "description": "Heure de manutention",
+                "quantity": 4.0,
+                "unit_price": 36.65
+              },
+              {
+                "line": 3,
+                "description": "Ramette papier A4 80g",
+                "quantity": 25.0,
+                "unit_price": 5.0
+              },
+              {
+                "line": 4,
+                "description": "Cartouche toner noir",
+                "quantity": 12.0,
+                "unit_price": 62.21
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-6694",
+            "supplier_id": "SUP-105",
+            "supplier_name": "Transports Lefèvre SAS",
+            "order_date": "2026-09-02",
+            "currency": "EUR",
+            "status": "open",
+            "total": 1849.76,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Prestation de maintenance",
+                "quantity": 8.0,
+                "unit_price": 119.35
+              },
+              {
+                "line": 2,
+                "description": "Heure de manutention",
+                "quantity": 25.0,
+                "unit_price": 34.02
+              },
+              {
+                "line": 3,
+                "description": "Ramette papier A4 80g",
+                "quantity": 6.0,
+                "unit_price": 7.41
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-3898",
+            "supplier_id": "SUP-105",
+            "supplier_name": "Transports Lefèvre SAS",
+            "order_date": "2026-09-05",
+            "currency": "EUR",
+            "status": "open",
+            "total": 128.02,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Cartouche toner noir",
+                "quantity": 2.0,
+                "unit_price": 64.01
+              }
+            ]
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-6694"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-6694",
+        "supplier_id": "SUP-105",
+        "supplier_name": "Transports Lefèvre SAS",
+        "order_date": "2026-09-02",
+        "currency": "EUR",
+        "status": "open",
+        "total": 1849.76,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Prestation de maintenance",
+            "quantity": 8.0,
+            "unit_price": 119.35
+          },
+          {
+            "line": 2,
+            "description": "Heure de manutention",
+            "quantity": 25.0,
+            "unit_price": 34.02
+          },
+          {
+            "line": 3,
+            "description": "Ramette papier A4 80g",
+            "quantity": 6.0,
+            "unit_price": 7.41
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-6694"
+      },
+      "result": {
+        "po_number": "PO-2026-6694",
+        "clean": true,
+        "issues": [],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Prestation de maintenance",
+            "po_line": 1,
+            "po_description": "Prestation de maintenance",
+            "billed_qty": 8.0,
+            "ordered_qty": 8.0,
+            "received_qty": 8.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 119.35,
+            "po_price": 119.35
+          },
+          {
+            "invoice_line": 2,
+            "description": "Heure de manutention",
+            "po_line": 2,
+            "po_description": "Heure de manutention",
+            "billed_qty": 25.0,
+            "ordered_qty": 25.0,
+            "received_qty": 25.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 34.02,
+            "po_price": 34.02
+          },
+          {
+            "invoice_line": 3,
+            "description": "Ramette papier A4 80g",
+            "po_line": 3,
+            "po_description": "Ramette papier A4 80g",
+            "billed_qty": 6.0,
+            "ordered_qty": 6.0,
+            "received_qty": 6.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 7.41,
+            "po_price": 7.41
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 8,
+      "tool": "approve_for_payment",
+      "args": {
+        "po_number": "PO-2026-6694",
+        "note": "Invoice matches PO-2026-6694 without issues."
+      },
+      "result": {
+        "approved": true,
+        "scheduled_payment_date": "2026-11-10"
+      },
+      "seconds": 0.01
+    }
+  ]
+}

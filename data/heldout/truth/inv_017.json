@@ -1,0 +1,57 @@
+{
+  "doc_id": "inv_017",
+  "file": "inv_017.pdf",
+  "layout": "us",
+  "photo": false,
+  "scenario": "qty_over_received",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "qty_variance"
+    ],
+    "all_policy_reasons": [
+      "qty_variance"
+    ],
+    "po_number": "PO-2026-8052"
+  },
+  "invoice": {
+    "supplier_name": "Northwind Office Supply Inc.",
+    "supplier_tax_id": "39-1259247",
+    "invoice_number": "INV-8021",
+    "invoice_date": "2026-09-14",
+    "due_date": "2026-10-14",
+    "currency": "USD",
+    "subtotal": 524.26,
+    "tax_rate": 8.25,
+    "tax_amount": 43.25,
+    "total": 567.51,
+    "line_items": [
+      {
+        "description": "Corrugated boxes 24x18x12",
+        "quantity": 6.0,
+        "unit_price": 3.33,
+        "amount": 19.98
+      },
+      {
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 6.0,
+        "unit_price": 28.08,
+        "amount": 168.48
+      },
+      {
+        "description": "Stretch wrap roll 18in",
+        "quantity": 8.0,
+        "unit_price": 18.75,
+        "amount": 150.0
+      },
+      {
+        "description": "Warehouse labor (hour)",
+        "quantity": 5.0,
+        "unit_price": 37.16,
+        "amount": 185.8
+      }
+    ],
+    "po_number": "PO-2026-8052",
+    "bank_account": "Routing 580053720  Account 3057833548"
+  }
+}

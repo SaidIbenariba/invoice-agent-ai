@@ -1,0 +1,45 @@
+{
+  "doc_id": "inv_001",
+  "file": "inv_001.pdf",
+  "layout": "uk",
+  "photo": false,
+  "scenario": "bank_change",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "bank_mismatch"
+    ],
+    "all_policy_reasons": [
+      "bank_mismatch"
+    ],
+    "po_number": "PO-2026-6785"
+  },
+  "invoice": {
+    "supplier_name": "Pennine Print & Pack Ltd",
+    "supplier_tax_id": "GB633505809",
+    "invoice_number": "TV3110",
+    "invoice_date": "2026-09-16",
+    "due_date": "2026-10-16",
+    "currency": "GBP",
+    "subtotal": 243.33,
+    "tax_rate": 20.0,
+    "tax_amount": 48.67,
+    "total": 292.0,
+    "line_items": [
+      {
+        "description": "Printed flyers A5 (500)",
+        "quantity": 5.0,
+        "unit_price": 42.03,
+        "amount": 210.15
+      },
+      {
+        "description": "Courier fuel surcharge",
+        "quantity": 6.0,
+        "unit_price": 5.53,
+        "amount": 33.18
+      }
+    ],
+    "po_number": "PO-2026-6785",
+    "bank_account": "Sort code 62-20-85  Account 20389606"
+  }
+}

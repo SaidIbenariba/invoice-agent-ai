@@ -1,0 +1,205 @@
+{
+  "doc_id": "inv_006",
+  "file": "inv_006.pdf",
+  "decision": "APPROVE",
+  "reasons": [],
+  "po_number": "PO-2026-8634",
+  "note": "Invoice matches PO and goods receipts.",
+  "tool_calls": 7,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 57.0,
+  "invoice": {
+    "supplier_name": "Atelier Durand SARL",
+    "supplier_tax_id": "FR53274960816",
+    "invoice_number": "F2026-3878",
+    "invoice_date": "2026-09-28",
+    "due_date": "2026-11-12",
+    "currency": "EUR",
+    "subtotal": 228.38,
+    "tax_rate": 20.0,
+    "tax_amount": 45.68,
+    "total": 274.06,
+    "line_items": [
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 2.0,
+        "unit_price": 6.17,
+        "amount": 12.34
+      },
+      {
+        "description": "Cartouche toner noir",
+        "quantity": 4.0,
+        "unit_price": 54.01,
+        "amount": 216.04
+      }
+    ],
+    "po_number": "PO-2026-8634",
+    "bank_account": "FR76 0294 4206 7739 3870 7681 612"
+  },
+  "route": "text",
+  "extract_seconds": 34.7,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Atelier Durand SARL",
+        "supplier_tax_id": "FR53274960816",
+        "invoice_number": "F2026-3878",
+        "invoice_date": "2026-09-28",
+        "due_date": "2026-11-12",
+        "currency": "EUR",
+        "subtotal": 228.38,
+        "tax_rate": 20.0,
+        "tax_amount": 45.68,
+        "total": 274.06,
+        "line_items": [
+          {
+            "description": "Ramette papier A4 80g",
+            "quantity": 2.0,
+            "unit_price": 6.17,
+            "amount": 12.34
+          },
+          {
+            "description": "Cartouche toner noir",
+            "quantity": 4.0,
+            "unit_price": 54.01,
+            "amount": 216.04
+          }
+        ],
+        "po_number": "PO-2026-8634",
+        "bank_account": "****1612",
+        "missing": []
+      },
+      "seconds": 0.01
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "FR53274960816"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-104",
+        "name": "Atelier Durand SARL",
+        "tax_id": "FR53274960816",
+        "currency": "EUR",
+        "payment_terms_days": 45,
+        "email_on_file": "accounts@atelierdurandsarl.example",
+        "phone_on_file": "+33 1 99 00 13 10",
+        "bank_account_on_file": "****1612"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-104"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****1612",
+        "on_file": "****1612"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-8634"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-8634",
+        "supplier_id": "SUP-104",
+        "supplier_name": "Atelier Durand SARL",
+        "order_date": "2026-09-12",
+        "currency": "EUR",
+        "status": "open",
+        "total": 336.4,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Ramette papier A4 80g",
+            "quantity": 2.0,
+            "unit_price": 6.17
+          },
+          {
+            "line": 2,
+            "description": "Cartouche toner noir",
+            "quantity": 6.0,
+            "unit_price": 54.01
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-8634"
+      },
+      "result": {
+        "po_number": "PO-2026-8634",
+        "clean": true,
+        "issues": [],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Ramette papier A4 80g",
+            "po_line": 1,
+            "po_description": "Ramette papier A4 80g",
+            "billed_qty": 2.0,
+            "ordered_qty": 2.0,
+            "received_qty": 2.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 6.17,
+            "po_price": 6.17
+          },
+          {
+            "invoice_line": 2,
+            "description": "Cartouche toner noir",
+            "po_line": 2,
+            "po_description": "Cartouche toner noir",
+            "billed_qty": 4.0,
+            "ordered_qty": 6.0,
+            "received_qty": 4.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 54.01,
+            "po_price": 54.01
+          }
+        ]
+      },
+      "seconds": 0.01
+    },
+    {
+      "turn": 7,
+      "tool": "approve_for_payment",
+      "args": {
+        "po_number": "PO-2026-8634",
+        "note": "Invoice matches PO and goods receipts."
+      },
+      "result": {
+        "approved": true,
+        "scheduled_payment_date": "2026-11-12"
+      },
+      "seconds": 0.01
+    }
+  ]
+}

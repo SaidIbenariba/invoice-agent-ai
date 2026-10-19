@@ -1,0 +1,120 @@
+{
+  "doc_id": "inv_003",
+  "file": "inv_003.pdf",
+  "decision": "REJECT",
+  "reasons": [
+    "duplicate"
+  ],
+  "po_number": null,
+  "note": "Duplicate invoice TV5532 from Pennine Print & Pack Ltd, already paid on 2026-09-28.",
+  "tool_calls": 3,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 22.4,
+  "invoice": {
+    "supplier_name": "Pennine Print & Pack Ltd",
+    "supplier_tax_id": "GB633505809",
+    "invoice_number": "TV5532",
+    "invoice_date": "2026-09-28",
+    "due_date": "2026-10-28",
+    "currency": "GBP",
+    "subtotal": 1118.32,
+    "tax_rate": 20.0,
+    "tax_amount": 223.66,
+    "total": 1341.98,
+    "line_items": [
+      {
+        "description": "Same-day courier, zone 2",
+        "quantity": 12.0,
+        "unit_price": 38.91,
+        "amount": 466.92
+      },
+      {
+        "description": "Design hours",
+        "quantity": 6.0,
+        "unit_price": 58.8,
+        "amount": 352.8
+      },
+      {
+        "description": "Printed flyers A5 (500)",
+        "quantity": 4.0,
+        "unit_price": 74.65,
+        "amount": 298.6
+      }
+    ],
+    "po_number": "PO-2026-5309",
+    "bank_account": "Sort code 67-55-90 Account 90572883"
+  },
+  "route": "text",
+  "extract_seconds": 33.7,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Pennine Print & Pack Ltd",
+        "supplier_tax_id": "GB633505809",
+        "invoice_number": "TV5532",
+        "invoice_date": "2026-09-28",
+        "due_date": "2026-10-28",
+        "currency": "GBP",
+        "subtotal": 1118.32,
+        "tax_rate": 20.0,
+        "tax_amount": 223.66,
+        "total": 1341.98,
+        "line_items": [
+          {
+            "description": "Same-day courier, zone 2",
+            "quantity": 12.0,
+            "unit_price": 38.91,
+            "amount": 466.92
+          },
+          {
+            "description": "Design hours",
+            "quantity": 6.0,
+            "unit_price": 58.8,
+            "amount": 352.8
+          },
+          {
+            "description": "Printed flyers A5 (500)",
+            "quantity": 4.0,
+            "unit_price": 74.65,
+            "amount": 298.6
+          }
+        ],
+        "po_number": "PO-2026-5309",
+        "bank_account": "****2883",
+        "missing": []
+      },
+      "seconds": 0.09
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": false,
+        "issues": [
+          {
+            "code": "duplicate",
+            "message": "invoice TV5532 from Pennine Print & Pack Ltd already paid (dated 2026-09-28, total 1341.98)"
+          }
+        ],
+        "next_step": "Duplicate: call reject_invoice."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "reject_invoice",
+      "args": {
+        "note": "Duplicate invoice TV5532 from Pennine Print & Pack Ltd, already paid on 2026-09-28."
+      },
+      "result": {
+        "rejected": true
+      },
+      "seconds": 0.01
+    }
+  ]
+}

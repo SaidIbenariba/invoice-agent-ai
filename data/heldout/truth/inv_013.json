@@ -1,0 +1,47 @@
+{
+  "doc_id": "inv_013",
+  "file": "inv_013.pdf",
+  "layout": "ma",
+  "photo": false,
+  "scenario": "clean",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-2519"
+  },
+  "invoice": {
+    "supplier_name": "Bureautique Rabat SARL",
+    "supplier_tax_id": "326427746127808",
+    "invoice_number": "2026/5717",
+    "invoice_date": "2026-10-04",
+    "due_date": "2026-11-03",
+    "currency": "MAD",
+    "subtotal": 9851.82,
+    "tax_rate": 20.0,
+    "tax_amount": 1970.36,
+    "total": 11822.18,
+    "line_items": [
+      {
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 12.0,
+        "unit_price": 159.91,
+        "amount": 1918.92
+      },
+      {
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 10.0,
+        "unit_price": 708.43,
+        "amount": 7084.3
+      },
+      {
+        "description": "Rame papier A4",
+        "quantity": 20.0,
+        "unit_price": 42.43,
+        "amount": 848.6
+      }
+    ],
+    "po_number": "PO-2026-2519",
+    "bank_account": "661 914 8939501274705891 24"
+  }
+}

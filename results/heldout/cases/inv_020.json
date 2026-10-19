@@ -1,0 +1,126 @@
+{
+  "doc_id": "inv_020",
+  "file": "inv_020.pdf",
+  "decision": "HOLD",
+  "reasons": [
+    "invoice_check_failed"
+  ],
+  "po_number": null,
+  "note": "Invoice line total mismatch for main d'oeuvre. Expected 957.3, got 982.3.",
+  "tool_calls": 3,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 31.9,
+  "invoice": {
+    "supplier_name": "ATLAS TRANSPORT SARL",
+    "supplier_tax_id": "472780809078618",
+    "invoice_number": "2026/3064",
+    "invoice_date": "2026-09-26",
+    "due_date": "2026-10-26",
+    "currency": "MAD",
+    "subtotal": 13154.27,
+    "tax_rate": 7.0,
+    "tax_amount": 920.8,
+    "total": 14075.07,
+    "line_items": [
+      {
+        "description": "Toner imprimante",
+        "quantity": 25.0,
+        "unit_price": 482.57,
+        "amount": 12064.25
+      },
+      {
+        "description": "Rame papier A4",
+        "quantity": 2.0,
+        "unit_price": 53.86,
+        "amount": 107.72
+      },
+      {
+        "description": "Main d'oeuvre (heure)",
+        "quantity": 10.0,
+        "unit_price": 95.73,
+        "amount": 982.3
+      }
+    ],
+    "po_number": "PO-2026-4262",
+    "bank_account": "047 309 9875154852017834 82"
+  },
+  "route": "text",
+  "extract_seconds": 42.7,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "ATLAS TRANSPORT SARL",
+        "supplier_tax_id": "472780809078618",
+        "invoice_number": "2026/3064",
+        "invoice_date": "2026-09-26",
+        "due_date": "2026-10-26",
+        "currency": "MAD",
+        "subtotal": 13154.27,
+        "tax_rate": 7.0,
+        "tax_amount": 920.8,
+        "total": 14075.07,
+        "line_items": [
+          {
+            "description": "Toner imprimante",
+            "quantity": 25.0,
+            "unit_price": 482.57,
+            "amount": 12064.25
+          },
+          {
+            "description": "Rame papier A4",
+            "quantity": 2.0,
+            "unit_price": 53.86,
+            "amount": 107.72
+          },
+          {
+            "description": "Main d'oeuvre (heure)",
+            "quantity": 10.0,
+            "unit_price": 95.73,
+            "amount": 982.3
+          }
+        ],
+        "po_number": "PO-2026-4262",
+        "bank_account": "****3482",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": false,
+        "issues": [
+          {
+            "code": "invoice_check_failed",
+            "message": "line 3: 10.0 x 95.73 = 957.3, invoice says 982.3"
+          }
+        ],
+        "next_step": "Call hold_for_review with reason invoice_check_failed."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "hold_for_review",
+      "args": {
+        "reasons": [
+          "invoice_check_failed"
+        ],
+        "note": "Invoice line total mismatch for main d'oeuvre. Expected 957.3, got 982.3."
+      },
+      "result": {
+        "on_hold": true,
+        "reasons": [
+          "invoice_check_failed"
+        ]
+      },
+      "seconds": 0.04
+    }
+  ]
+}

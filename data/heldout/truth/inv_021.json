@@ -1,0 +1,47 @@
+{
+  "doc_id": "inv_021",
+  "file": "inv_021.jpg",
+  "layout": "fr",
+  "photo": true,
+  "scenario": "po_missing_unique",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-6694"
+  },
+  "invoice": {
+    "supplier_name": "Transports Lefèvre SAS",
+    "supplier_tax_id": "FR23544127928",
+    "invoice_number": "F2026-3404",
+    "invoice_date": "2026-09-26",
+    "due_date": "2026-11-10",
+    "currency": "EUR",
+    "subtotal": 1849.76,
+    "tax_rate": 20.0,
+    "tax_amount": 369.95,
+    "total": 2219.71,
+    "line_items": [
+      {
+        "description": "Prestation de maintenance",
+        "quantity": 8.0,
+        "unit_price": 119.35,
+        "amount": 954.8
+      },
+      {
+        "description": "Heure de manutention",
+        "quantity": 25.0,
+        "unit_price": 34.02,
+        "amount": 850.5
+      },
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 6.0,
+        "unit_price": 7.41,
+        "amount": 44.46
+      }
+    ],
+    "po_number": null,
+    "bank_account": "FR76 5539 0409 1565 1619 1035 952"
+  }
+}

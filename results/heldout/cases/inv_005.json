@@ -1,0 +1,237 @@
+{
+  "doc_id": "inv_005",
+  "file": "inv_005.pdf",
+  "decision": "APPROVE",
+  "reasons": [],
+  "po_number": "PO-2026-9487",
+  "note": "Invoice matches PO and goods receipts.",
+  "tool_calls": 8,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 55.1,
+  "invoice": {
+    "supplier_name": "Brightline Logistics LLC",
+    "supplier_tax_id": "04-8724948",
+    "invoice_number": "INV-4689",
+    "invoice_date": "2026-09-16",
+    "due_date": "2026-10-31",
+    "currency": "USD",
+    "subtotal": 3107.25,
+    "tax_rate": 0.0,
+    "tax_amount": 0.0,
+    "total": 3107.25,
+    "line_items": [
+      {
+        "description": "Printer paper, case",
+        "quantity": 25.0,
+        "unit_price": 46.65,
+        "amount": 1166.25
+      },
+      {
+        "description": "Warehouse labor (hour)",
+        "quantity": 50.0,
+        "unit_price": 38.82,
+        "amount": 1941.0
+      }
+    ],
+    "po_number": "PO-2026-9487",
+    "bank_account": "Routing 645759304 Account 0673984398"
+  },
+  "route": "text",
+  "extract_seconds": 32.1,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Brightline Logistics LLC",
+        "supplier_tax_id": "04-8724948",
+        "invoice_number": "INV-4689",
+        "invoice_date": "2026-09-16",
+        "due_date": "2026-10-31",
+        "currency": "USD",
+        "subtotal": 3107.25,
+        "tax_rate": 0.0,
+        "tax_amount": 0.0,
+        "total": 3107.25,
+        "line_items": [
+          {
+            "description": "Printer paper, case",
+            "quantity": 25.0,
+            "unit_price": 46.65,
+            "amount": 1166.25
+          },
+          {
+            "description": "Warehouse labor (hour)",
+            "quantity": 50.0,
+            "unit_price": 38.82,
+            "amount": 1941.0
+          }
+        ],
+        "po_number": "PO-2026-9487",
+        "bank_account": "****4398",
+        "missing": []
+      },
+      "seconds": 0.01
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "04-8724948"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-101",
+        "name": "Brightline Logistics LLC",
+        "tax_id": "04-8724948",
+        "currency": "USD",
+        "payment_terms_days": 45,
+        "email_on_file": "accounts@brightlinelogistic.example",
+        "phone_on_file": "+1 214 555 0110",
+        "bank_account_on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-101"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****4398",
+        "on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-9487"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-9487",
+        "supplier_id": "SUP-101",
+        "supplier_name": "Brightline Logistics LLC",
+        "order_date": "2026-08-24",
+        "currency": "USD",
+        "status": "open",
+        "total": 4273.5,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Printer paper, case",
+            "quantity": 50.0,
+            "unit_price": 46.65
+          },
+          {
+            "line": 2,
+            "description": "Warehouse labor (hour)",
+            "quantity": 50.0,
+            "unit_price": 38.82
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-9487"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-9487",
+        "supplier_id": "SUP-101",
+        "supplier_name": "Brightline Logistics LLC",
+        "order_date": "2026-08-24",
+        "currency": "USD",
+        "status": "open",
+        "total": 4273.5,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Printer paper, case",
+            "quantity": 50.0,
+            "unit_price": 46.65
+          },
+          {
+            "line": 2,
+            "description": "Warehouse labor (hour)",
+            "quantity": 50.0,
+            "unit_price": 38.82
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-9487"
+      },
+      "result": {
+        "po_number": "PO-2026-9487",
+        "clean": true,
+        "issues": [],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Printer paper, case",
+            "po_line": 1,
+            "po_description": "Printer paper, case",
+            "billed_qty": 25.0,
+            "ordered_qty": 50.0,
+            "received_qty": 25.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 46.65,
+            "po_price": 46.65
+          },
+          {
+            "invoice_line": 2,
+            "description": "Warehouse labor (hour)",
+            "po_line": 2,
+            "po_description": "Warehouse labor (hour)",
+            "billed_qty": 50.0,
+            "ordered_qty": 50.0,
+            "received_qty": 50.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 38.82,
+            "po_price": 38.82
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 8,
+      "tool": "approve_for_payment",
+      "args": {
+        "po_number": "PO-2026-9487",
+        "note": "Invoice matches PO and goods receipts."
+      },
+      "result": {
+        "approved": true,
+        "scheduled_payment_date": "2026-10-31"
+      },
+      "seconds": 0.01
+    }
+  ]
+}

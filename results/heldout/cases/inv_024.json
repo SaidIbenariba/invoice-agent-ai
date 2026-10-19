@@ -1,0 +1,249 @@
+{
+  "doc_id": "inv_024",
+  "file": "inv_024.pdf",
+  "decision": "HOLD",
+  "reasons": [
+    "qty_variance"
+  ],
+  "po_number": null,
+  "note": "Quantity variance: billed 20 units but only 15 were received. At most 15 units can be paid.",
+  "tool_calls": 8,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 62.6,
+  "invoice": {
+    "supplier_name": "Pennine Print & Pack Ltd",
+    "supplier_tax_id": "GB633505809",
+    "invoice_number": "TV2109",
+    "invoice_date": "2026-09-28",
+    "due_date": "2026-10-28",
+    "currency": "GBP",
+    "subtotal": 249.82,
+    "tax_rate": 20.0,
+    "tax_amount": 49.96,
+    "total": 299.78,
+    "line_items": [
+      {
+        "description": "Printed flyers A5 (500)",
+        "quantity": 2.0,
+        "unit_price": 59.11,
+        "amount": 118.22
+      },
+      {
+        "description": "Courier fuel surcharge",
+        "quantity": 20.0,
+        "unit_price": 6.58,
+        "amount": 131.6
+      }
+    ],
+    "po_number": "PO-2026-1746",
+    "bank_account": "Sort code 67-55-90 Account 90572883. Please quote the invoice number."
+  },
+  "route": "text",
+  "extract_seconds": 40.1,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Pennine Print & Pack Ltd",
+        "supplier_tax_id": "GB633505809",
+        "invoice_number": "TV2109",
+        "invoice_date": "2026-09-28",
+        "due_date": "2026-10-28",
+        "currency": "GBP",
+        "subtotal": 249.82,
+        "tax_rate": 20.0,
+        "tax_amount": 49.96,
+        "total": 299.78,
+        "line_items": [
+          {
+            "description": "Printed flyers A5 (500)",
+            "quantity": 2.0,
+            "unit_price": 59.11,
+            "amount": 118.22
+          },
+          {
+            "description": "Courier fuel surcharge",
+            "quantity": 20.0,
+            "unit_price": 6.58,
+            "amount": 131.6
+          }
+        ],
+        "po_number": "PO-2026-1746",
+        "bank_account": "****2883",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "GB633505809"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-108",
+        "name": "Pennine Print & Pack Ltd",
+        "tax_id": "GB633505809",
+        "currency": "GBP",
+        "payment_terms_days": 30,
+        "email_on_file": "accounts@pennineprintpacklt.example",
+        "phone_on_file": "+44 118 496 0017",
+        "bank_account_on_file": "****2883"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-108"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****2883",
+        "on_file": "****2883"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-1746"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-1746",
+        "supplier_id": "SUP-108",
+        "supplier_name": "Pennine Print & Pack Ltd",
+        "order_date": "2026-09-08",
+        "currency": "GBP",
+        "status": "open",
+        "total": 249.82,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Printed flyers A5 (500)",
+            "quantity": 2.0,
+            "unit_price": 59.11
+          },
+          {
+            "line": 2,
+            "description": "Courier fuel surcharge",
+            "quantity": 20.0,
+            "unit_price": 6.58
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-1746"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-1746",
+        "supplier_id": "SUP-108",
+        "supplier_name": "Pennine Print & Pack Ltd",
+        "order_date": "2026-09-08",
+        "currency": "GBP",
+        "status": "open",
+        "total": 249.82,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Printed flyers A5 (500)",
+            "quantity": 2.0,
+            "unit_price": 59.11
+          },
+          {
+            "line": 2,
+            "description": "Courier fuel surcharge",
+            "quantity": 20.0,
+            "unit_price": 6.58
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-1746"
+      },
+      "result": {
+        "po_number": "PO-2026-1746",
+        "clean": false,
+        "issues": [
+          {
+            "code": "qty_variance",
+            "message": "line 2: billed 20, received 15 -> at most 15 can be paid"
+          }
+        ],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Printed flyers A5 (500)",
+            "po_line": 1,
+            "po_description": "Printed flyers A5 (500)",
+            "billed_qty": 2.0,
+            "ordered_qty": 2.0,
+            "received_qty": 2.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 59.11,
+            "po_price": 59.11
+          },
+          {
+            "invoice_line": 2,
+            "description": "Courier fuel surcharge",
+            "po_line": 2,
+            "po_description": "Courier fuel surcharge",
+            "billed_qty": 20.0,
+            "ordered_qty": 20.0,
+            "received_qty": 15.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 6.58,
+            "po_price": 6.58
+          }
+        ],
+        "next_step": "Do not approve against this PO. If you are checking candidates from search_purchase_orders, try the next one; otherwise call hold_for_review with these issue codes."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 8,
+      "tool": "hold_for_review",
+      "args": {
+        "reasons": [
+          "qty_variance"
+        ],
+        "note": "Quantity variance: billed 20 units but only 15 were received. At most 15 units can be paid."
+      },
+      "result": {
+        "on_hold": true,
+        "reasons": [
+          "qty_variance"
+        ]
+      },
+      "seconds": 0.0
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "doc_id": "inv_022",
+  "file": "inv_022.jpg",
+  "layout": "uk",
+  "photo": true,
+  "scenario": "unknown_supplier",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "unknown_supplier"
+    ],
+    "all_policy_reasons": [
+      "unknown_supplier"
+    ],
+    "po_number": null
+  },
+  "invoice": {
+    "supplier_name": "Thames Valley Couriers Ltd",
+    "supplier_tax_id": "GB634074384",
+    "invoice_number": "TV2454",
+    "invoice_date": "2026-09-21",
+    "due_date": "2026-10-21",
+    "currency": "GBP",
+    "subtotal": 610.48,
+    "tax_rate": 20.0,
+    "tax_amount": 122.1,
+    "total": 732.58,
+    "line_items": [
+      {
+        "description": "Mailing bags, large (100)",
+        "quantity": 8.0,
+        "unit_price": 20.81,
+        "amount": 166.48
+      },
+      {
+        "description": "Same-day courier, zone 2",
+        "quantity": 6.0,
+        "unit_price": 44.23,
+        "amount": 265.38
+      },
+      {
+        "description": "Courier fuel surcharge",
+        "quantity": 8.0,
+        "unit_price": 8.63,
+        "amount": 69.04
+      },
+      {
+        "description": "Design hours",
+        "quantity": 2.0,
+        "unit_price": 54.79,
+        "amount": 109.58
+      }
+    ],
+    "po_number": "PO-2026-4982",
+    "bank_account": "Sort code 26-51-79  Account 90196014"
+  }
+}

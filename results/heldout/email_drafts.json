@@ -1,0 +1,16 @@
+[
+  {
+    "doc_id": "inv_001",
+    "to": "accounts@pennineprintpacklt.example",
+    "subject": "Please confirm your bank details",
+    "body": "Dear Pennine Print & Pack Ltd,\n\nWe have received your invoice TV3110 and noticed that the bank account number on the invoice does not match the one on file. Could you please confirm your bank details by phone on the number on file: +44 118 496 0017.\n\nThank you.",
+    "status": "draft (not sent)"
+  },
+  {
+    "doc_id": "inv_002",
+    "to": "accounts@atlastransportsarl.example",
+    "subject": "Please confirm your bank details",
+    "body": "Dear Atlas Transport SARL,\n\nWe have received your invoice and noticed a discrepancy in the bank account details. Could you please confirm these by calling us on the number on file: +212 537 00 18 10.\n\nThank you.",
+    "status": "draft (not sent)"
+  }
+]

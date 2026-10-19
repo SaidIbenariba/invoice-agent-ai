@@ -1,0 +1,247 @@
+{
+  "doc_id": "inv_019",
+  "file": "inv_019.pdf",
+  "decision": "HOLD",
+  "reasons": [
+    "price_variance"
+  ],
+  "po_number": null,
+  "note": "Unit price for line 2 differs by 8.2% from the PO.",
+  "tool_calls": 7,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 42.1,
+  "invoice": {
+    "supplier_name": "ATLAS TRANSPORT SARL",
+    "supplier_tax_id": "472780809078618",
+    "invoice_number": "2026/1733",
+    "invoice_date": "2026-09-28",
+    "due_date": "2026-10-28",
+    "currency": "MAD",
+    "subtotal": 61161.1,
+    "tax_rate": 10.0,
+    "tax_amount": 6116.11,
+    "total": 67277.21,
+    "line_items": [
+      {
+        "description": "Rame papier A4",
+        "quantity": 20.0,
+        "unit_price": 39.48,
+        "amount": 789.6
+      },
+      {
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 50.0,
+        "unit_price": 1202.43,
+        "amount": 60121.5
+      },
+      {
+        "description": "Emballage carton",
+        "quantity": 20.0,
+        "unit_price": 12.5,
+        "amount": 250.0
+      }
+    ],
+    "po_number": "PO-2026-7257",
+    "bank_account": "047 309 9875154852017834 82"
+  },
+  "route": "text",
+  "extract_seconds": 46.4,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "ATLAS TRANSPORT SARL",
+        "supplier_tax_id": "472780809078618",
+        "invoice_number": "2026/1733",
+        "invoice_date": "2026-09-28",
+        "due_date": "2026-10-28",
+        "currency": "MAD",
+        "subtotal": 61161.1,
+        "tax_rate": 10.0,
+        "tax_amount": 6116.11,
+        "total": 67277.21,
+        "line_items": [
+          {
+            "description": "Rame papier A4",
+            "quantity": 20.0,
+            "unit_price": 39.48,
+            "amount": 789.6
+          },
+          {
+            "description": "Transport marchandises Casa-Rabat",
+            "quantity": 50.0,
+            "unit_price": 1202.43,
+            "amount": 60121.5
+          },
+          {
+            "description": "Emballage carton",
+            "quantity": 20.0,
+            "unit_price": 12.5,
+            "amount": 250.0
+          }
+        ],
+        "po_number": "PO-2026-7257",
+        "bank_account": "****3482",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "472780809078618"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-109",
+        "name": "Atlas Transport SARL",
+        "tax_id": "472780809078618",
+        "currency": "MAD",
+        "payment_terms_days": 30,
+        "email_on_file": "accounts@atlastransportsarl.example",
+        "phone_on_file": "+212 537 00 18 10",
+        "bank_account_on_file": "****3482"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-109"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****3482",
+        "on_file": "****3482"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-7257"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-7257",
+        "supplier_id": "SUP-109",
+        "supplier_name": "Atlas Transport SARL",
+        "order_date": "2026-09-04",
+        "currency": "MAD",
+        "status": "open",
+        "total": 56595.1,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Rame papier A4",
+            "quantity": 20.0,
+            "unit_price": 39.48
+          },
+          {
+            "line": 2,
+            "description": "Transport marchandises Casa-Rabat",
+            "quantity": 50.0,
+            "unit_price": 1111.11
+          },
+          {
+            "line": 3,
+            "description": "Emballage carton",
+            "quantity": 20.0,
+            "unit_price": 12.5
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-7257"
+      },
+      "result": {
+        "po_number": "PO-2026-7257",
+        "clean": false,
+        "issues": [
+          {
+            "code": "price_variance",
+            "message": "line 2: unit price 1202.43 vs PO 1111.11 (+8.2%)"
+          }
+        ],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Rame papier A4",
+            "po_line": 1,
+            "po_description": "Rame papier A4",
+            "billed_qty": 20.0,
+            "ordered_qty": 20.0,
+            "received_qty": 20.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 39.48,
+            "po_price": 39.48
+          },
+          {
+            "invoice_line": 2,
+            "description": "Transport marchandises Casa-Rabat",
+            "po_line": 2,
+            "po_description": "Transport marchandises Casa-Rabat",
+            "billed_qty": 50.0,
+            "ordered_qty": 50.0,
+            "received_qty": 50.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 1202.43,
+            "po_price": 1111.11
+          },
+          {
+            "invoice_line": 3,
+            "description": "Emballage carton",
+            "po_line": 3,
+            "po_description": "Emballage carton",
+            "billed_qty": 20.0,
+            "ordered_qty": 20.0,
+            "received_qty": 20.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 12.5,
+            "po_price": 12.5
+          }
+        ],
+        "next_step": "Do not approve against this PO. If you are checking candidates from search_purchase_orders, try the next one; otherwise call hold_for_review with these issue codes."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "hold_for_review",
+      "args": {
+        "note": "Unit price for line 2 differs by 8.2% from the PO.",
+        "reasons": [
+          "price_variance"
+        ]
+      },
+      "result": {
+        "on_hold": true,
+        "reasons": [
+          "price_variance"
+        ]
+      },
+      "seconds": 0.01
+    }
+  ]
+}

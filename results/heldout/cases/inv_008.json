@@ -1,0 +1,217 @@
+{
+  "doc_id": "inv_008",
+  "file": "inv_008.jpg",
+  "decision": "HOLD",
+  "reasons": [
+    "price_variance"
+  ],
+  "po_number": null,
+  "note": "Unit price for 'Transport marchandises Casa-Rabat' on invoice differs by 11.9% from PO.",
+  "tool_calls": 7,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 42.9,
+  "invoice": {
+    "supplier_name": "ATLAS TRANSPORT SARL",
+    "supplier_tax_id": "472780809078618",
+    "invoice_number": "2026/2741",
+    "invoice_date": "2026-10-01",
+    "due_date": "2026-10-31",
+    "currency": "MAD",
+    "subtotal": 28671.5,
+    "tax_rate": 10.0,
+    "tax_amount": 2867.15,
+    "total": 31538.65,
+    "line_items": [
+      {
+        "description": "Emballage carton",
+        "quantity": 20.0,
+        "unit_price": 20.8,
+        "amount": 416.0
+      },
+      {
+        "description": "Transport marchandises Casa-Rabat",
+        "quantity": 25.0,
+        "unit_price": 1130.22,
+        "amount": 28255.5
+      }
+    ],
+    "po_number": "PO-2026-3454",
+    "bank_account": "047 309 9875154852017834 82"
+  },
+  "route": "vision",
+  "extract_seconds": 61.8,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "ATLAS TRANSPORT SARL",
+        "supplier_tax_id": "472780809078618",
+        "invoice_number": "2026/2741",
+        "invoice_date": "2026-10-01",
+        "due_date": "2026-10-31",
+        "currency": "MAD",
+        "subtotal": 28671.5,
+        "tax_rate": 10.0,
+        "tax_amount": 2867.15,
+        "total": 31538.65,
+        "line_items": [
+          {
+            "description": "Emballage carton",
+            "quantity": 20.0,
+            "unit_price": 20.8,
+            "amount": 416.0
+          },
+          {
+            "description": "Transport marchandises Casa-Rabat",
+            "quantity": 25.0,
+            "unit_price": 1130.22,
+            "amount": 28255.5
+          }
+        ],
+        "po_number": "PO-2026-3454",
+        "bank_account": "****3482",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "472780809078618"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-109",
+        "name": "Atlas Transport SARL",
+        "tax_id": "472780809078618",
+        "currency": "MAD",
+        "payment_terms_days": 30,
+        "email_on_file": "accounts@atlastransportsarl.example",
+        "phone_on_file": "+212 537 00 18 10",
+        "bank_account_on_file": "****3482"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-109"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****3482",
+        "on_file": "****3482"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-3454"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-3454",
+        "supplier_id": "SUP-109",
+        "supplier_name": "Atlas Transport SARL",
+        "order_date": "2026-09-08",
+        "currency": "MAD",
+        "status": "open",
+        "total": 25660.25,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Emballage carton",
+            "quantity": 20.0,
+            "unit_price": 20.8
+          },
+          {
+            "line": 2,
+            "description": "Transport marchandises Casa-Rabat",
+            "quantity": 25.0,
+            "unit_price": 1009.77
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-3454"
+      },
+      "result": {
+        "po_number": "PO-2026-3454",
+        "clean": false,
+        "issues": [
+          {
+            "code": "price_variance",
+            "message": "line 2: unit price 1130.22 vs PO 1009.77 (+11.9%)"
+          }
+        ],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Emballage carton",
+            "po_line": 1,
+            "po_description": "Emballage carton",
+            "billed_qty": 20.0,
+            "ordered_qty": 20.0,
+            "received_qty": 20.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 20.8,
+            "po_price": 20.8
+          },
+          {
+            "invoice_line": 2,
+            "description": "Transport marchandises Casa-Rabat",
+            "po_line": 2,
+            "po_description": "Transport marchandises Casa-Rabat",
+            "billed_qty": 25.0,
+            "ordered_qty": 25.0,
+            "received_qty": 25.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 1130.22,
+            "po_price": 1009.77
+          }
+        ],
+        "next_step": "Do not approve against this PO. If you are checking candidates from search_purchase_orders, try the next one; otherwise call hold_for_review with these issue codes."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "hold_for_review",
+      "args": {
+        "reasons": [
+          "price_variance"
+        ],
+        "note": "Unit price for 'Transport marchandises Casa-Rabat' on invoice differs by 11.9% from PO."
+      },
+      "result": {
+        "on_hold": true,
+        "reasons": [
+          "price_variance"
+        ]
+      },
+      "seconds": 0.0
+    }
+  ]
+}

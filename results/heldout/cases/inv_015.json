@@ -1,0 +1,424 @@
+{
+  "doc_id": "inv_015",
+  "file": "inv_015.pdf",
+  "decision": "APPROVE",
+  "reasons": [],
+  "po_number": "PO-2026-6751",
+  "note": "Invoice matches PO-2026-6751 perfectly.",
+  "tool_calls": 8,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 64.5,
+  "invoice": {
+    "supplier_name": "Brightline Logistics LLC",
+    "supplier_tax_id": "04-8724948",
+    "invoice_number": "INV-8478",
+    "invoice_date": "2026-10-05",
+    "due_date": "2026-11-19",
+    "currency": "USD",
+    "subtotal": 244.95,
+    "tax_rate": 8.25,
+    "tax_amount": 20.21,
+    "total": 265.16,
+    "line_items": [
+      {
+        "description": "Stretch wrap roll 18in",
+        "quantity": 2.0,
+        "unit_price": 31.45,
+        "amount": 62.9
+      },
+      {
+        "description": "Corrugated boxes 24x18x12",
+        "quantity": 5.0,
+        "unit_price": 2.13,
+        "amount": 10.65
+      },
+      {
+        "description": "Freight handling, pallet",
+        "quantity": 4.0,
+        "unit_price": 42.85,
+        "amount": 171.4
+      }
+    ],
+    "po_number": null,
+    "bank_account": "Routing 645759304 Account 0673984398"
+  },
+  "route": "text",
+  "extract_seconds": 44.4,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Brightline Logistics LLC",
+        "supplier_tax_id": "04-8724948",
+        "invoice_number": "INV-8478",
+        "invoice_date": "2026-10-05",
+        "due_date": "2026-11-19",
+        "currency": "USD",
+        "subtotal": 244.95,
+        "tax_rate": 8.25,
+        "tax_amount": 20.21,
+        "total": 265.16,
+        "line_items": [
+          {
+            "description": "Stretch wrap roll 18in",
+            "quantity": 2.0,
+            "unit_price": 31.45,
+            "amount": 62.9
+          },
+          {
+            "description": "Corrugated boxes 24x18x12",
+            "quantity": 5.0,
+            "unit_price": 2.13,
+            "amount": 10.65
+          },
+          {
+            "description": "Freight handling, pallet",
+            "quantity": 4.0,
+            "unit_price": 42.85,
+            "amount": 171.4
+          }
+        ],
+        "po_number": null,
+        "bank_account": "****4398",
+        "missing": [
+          "po_number"
+        ],
+        "next_step": "No PO number on this invoice. After find_supplier, call search_purchase_orders and three_way_match on each open PO; approve only if exactly one is clean."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "04-8724948"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-101",
+        "name": "Brightline Logistics LLC",
+        "tax_id": "04-8724948",
+        "currency": "USD",
+        "payment_terms_days": 45,
+        "email_on_file": "accounts@brightlinelogistic.example",
+        "phone_on_file": "+1 214 555 0110",
+        "bank_account_on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-101"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****4398",
+        "on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "search_purchase_orders",
+      "args": {
+        "supplier_id": "SUP-101"
+      },
+      "result": {
+        "open_purchase_orders": [
+          {
+            "po_number": "PO-2026-9906",
+            "supplier_id": "SUP-101",
+            "supplier_name": "Brightline Logistics LLC",
+            "order_date": "2026-09-09",
+            "currency": "USD",
+            "status": "open",
+            "total": 4602.81,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Warehouse labor (hour)",
+                "quantity": 25.0,
+                "unit_price": 29.89
+              },
+              {
+                "line": 2,
+                "description": "Corrugated boxes 24x18x12",
+                "quantity": 2.0,
+                "unit_price": 2.28
+              },
+              {
+                "line": 3,
+                "description": "Freight handling, pallet",
+                "quantity": 50.0,
+                "unit_price": 77.02
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-9487",
+            "supplier_id": "SUP-101",
+            "supplier_name": "Brightline Logistics LLC",
+            "order_date": "2026-08-24",
+            "currency": "USD",
+            "status": "open",
+            "total": 4273.5,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Printer paper, case",
+                "quantity": 50.0,
+                "unit_price": 46.65
+              },
+              {
+                "line": 2,
+                "description": "Warehouse labor (hour)",
+                "quantity": 50.0,
+                "unit_price": 38.82
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-1521",
+            "supplier_id": "SUP-101",
+            "supplier_name": "Brightline Logistics LLC",
+            "order_date": "2026-08-23",
+            "currency": "USD",
+            "status": "open",
+            "total": 5108.05,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Freight handling, pallet",
+                "quantity": 25.0,
+                "unit_price": 86.33
+              },
+              {
+                "line": 2,
+                "description": "Shipping labels, 1000 pack",
+                "quantity": 20.0,
+                "unit_price": 36.56
+              },
+              {
+                "line": 3,
+                "description": "Stretch wrap roll 18in",
+                "quantity": 8.0,
+                "unit_price": 25.2
+              },
+              {
+                "line": 4,
+                "description": "Warehouse labor (hour)",
+                "quantity": 50.0,
+                "unit_price": 40.34
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-6751",
+            "supplier_id": "SUP-101",
+            "supplier_name": "Brightline Logistics LLC",
+            "order_date": "2026-09-12",
+            "currency": "USD",
+            "status": "open",
+            "total": 244.95,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Stretch wrap roll 18in",
+                "quantity": 2.0,
+                "unit_price": 31.45
+              },
+              {
+                "line": 2,
+                "description": "Corrugated boxes 24x18x12",
+                "quantity": 5.0,
+                "unit_price": 2.13
+              },
+              {
+                "line": 3,
+                "description": "Freight handling, pallet",
+                "quantity": 4.0,
+                "unit_price": 42.85
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-4711",
+            "supplier_id": "SUP-101",
+            "supplier_name": "Brightline Logistics LLC",
+            "order_date": "2026-09-04",
+            "currency": "USD",
+            "status": "open",
+            "total": 3230.5,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Shipping labels, 1000 pack",
+                "quantity": 50.0,
+                "unit_price": 31.85
+              },
+              {
+                "line": 2,
+                "description": "Warehouse labor (hour)",
+                "quantity": 50.0,
+                "unit_price": 32.76
+              }
+            ]
+          },
+          {
+            "po_number": "PO-2026-1292",
+            "supplier_id": "SUP-101",
+            "supplier_name": "Brightline Logistics LLC",
+            "order_date": "2026-09-02",
+            "currency": "USD",
+            "status": "open",
+            "total": 3006.43,
+            "lines": [
+              {
+                "line": 1,
+                "description": "Stretch wrap roll 18in",
+                "quantity": 6.0,
+                "unit_price": 31.74
+              },
+              {
+                "line": 2,
+                "description": "Corrugated boxes 24x18x12",
+                "quantity": 8.0,
+                "unit_price": 2.83
+              },
+              {
+                "line": 3,
+                "description": "Freight handling, pallet",
+                "quantity": 25.0,
+                "unit_price": 83.91
+              },
+              {
+                "line": 4,
+                "description": "Shipping labels, 1000 pack",
+                "quantity": 20.0,
+                "unit_price": 34.78
+              }
+            ]
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-6751"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-6751",
+        "supplier_id": "SUP-101",
+        "supplier_name": "Brightline Logistics LLC",
+        "order_date": "2026-09-12",
+        "currency": "USD",
+        "status": "open",
+        "total": 244.95,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Stretch wrap roll 18in",
+            "quantity": 2.0,
+            "unit_price": 31.45
+          },
+          {
+            "line": 2,
+            "description": "Corrugated boxes 24x18x12",
+            "quantity": 5.0,
+            "unit_price": 2.13
+          },
+          {
+            "line": 3,
+            "description": "Freight handling, pallet",
+            "quantity": 4.0,
+            "unit_price": 42.85
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-6751"
+      },
+      "result": {
+        "po_number": "PO-2026-6751",
+        "clean": true,
+        "issues": [],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Stretch wrap roll 18in",
+            "po_line": 1,
+            "po_description": "Stretch wrap roll 18in",
+            "billed_qty": 2.0,
+            "ordered_qty": 2.0,
+            "received_qty": 2.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 31.45,
+            "po_price": 31.45
+          },
+          {
+            "invoice_line": 2,
+            "description": "Corrugated boxes 24x18x12",
+            "po_line": 2,
+            "po_description": "Corrugated boxes 24x18x12",
+            "billed_qty": 5.0,
+            "ordered_qty": 5.0,
+            "received_qty": 5.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 2.13,
+            "po_price": 2.13
+          },
+          {
+            "invoice_line": 3,
+            "description": "Freight handling, pallet",
+            "po_line": 3,
+            "po_description": "Freight handling, pallet",
+            "billed_qty": 4.0,
+            "ordered_qty": 4.0,
+            "received_qty": 4.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 42.85,
+            "po_price": 42.85
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 8,
+      "tool": "approve_for_payment",
+      "args": {
+        "po_number": "PO-2026-6751",
+        "note": "Invoice matches PO-2026-6751 perfectly."
+      },
+      "result": {
+        "approved": true,
+        "scheduled_payment_date": "2026-11-19"
+      },
+      "seconds": 0.02
+    }
+  ]
+}

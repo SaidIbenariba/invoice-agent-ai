@@ -1,0 +1,265 @@
+{
+  "doc_id": "inv_009",
+  "file": "inv_009.pdf",
+  "decision": "APPROVE",
+  "reasons": [],
+  "po_number": "PO-2026-1521",
+  "note": "Invoice matches PO and goods receipts.",
+  "tool_calls": 7,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 44.6,
+  "invoice": {
+    "supplier_name": "Brightline Logistics LLC",
+    "supplier_tax_id": "04-8724948",
+    "invoice_number": "INV-4104",
+    "invoice_date": "2026-09-06",
+    "due_date": "2026-10-21",
+    "currency": "USD",
+    "subtotal": 5108.05,
+    "tax_rate": 8.25,
+    "tax_amount": 421.41,
+    "total": 5529.46,
+    "line_items": [
+      {
+        "description": "Freight handling, pallet",
+        "quantity": 25.0,
+        "unit_price": 86.33,
+        "amount": 2158.25
+      },
+      {
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 20.0,
+        "unit_price": 36.56,
+        "amount": 731.2
+      },
+      {
+        "description": "Stretch wrap roll 18in",
+        "quantity": 8.0,
+        "unit_price": 25.2,
+        "amount": 201.6
+      },
+      {
+        "description": "Warehouse labor (hour)",
+        "quantity": 50.0,
+        "unit_price": 40.34,
+        "amount": 2017.0
+      }
+    ],
+    "po_number": "PO-2026-1521",
+    "bank_account": "Routing 645759304 Account 0673984398"
+  },
+  "route": "text",
+  "extract_seconds": 38.6,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Brightline Logistics LLC",
+        "supplier_tax_id": "04-8724948",
+        "invoice_number": "INV-4104",
+        "invoice_date": "2026-09-06",
+        "due_date": "2026-10-21",
+        "currency": "USD",
+        "subtotal": 5108.05,
+        "tax_rate": 8.25,
+        "tax_amount": 421.41,
+        "total": 5529.46,
+        "line_items": [
+          {
+            "description": "Freight handling, pallet",
+            "quantity": 25.0,
+            "unit_price": 86.33,
+            "amount": 2158.25
+          },
+          {
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 20.0,
+            "unit_price": 36.56,
+            "amount": 731.2
+          },
+          {
+            "description": "Stretch wrap roll 18in",
+            "quantity": 8.0,
+            "unit_price": 25.2,
+            "amount": 201.6
+          },
+          {
+            "description": "Warehouse labor (hour)",
+            "quantity": 50.0,
+            "unit_price": 40.34,
+            "amount": 2017.0
+          }
+        ],
+        "po_number": "PO-2026-1521",
+        "bank_account": "****4398",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "04-8724948"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-101",
+        "name": "Brightline Logistics LLC",
+        "tax_id": "04-8724948",
+        "currency": "USD",
+        "payment_terms_days": 45,
+        "email_on_file": "accounts@brightlinelogistic.example",
+        "phone_on_file": "+1 214 555 0110",
+        "bank_account_on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-101"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****4398",
+        "on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-1521"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-1521",
+        "supplier_id": "SUP-101",
+        "supplier_name": "Brightline Logistics LLC",
+        "order_date": "2026-08-23",
+        "currency": "USD",
+        "status": "open",
+        "total": 5108.05,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Freight handling, pallet",
+            "quantity": 25.0,
+            "unit_price": 86.33
+          },
+          {
+            "line": 2,
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 20.0,
+            "unit_price": 36.56
+          },
+          {
+            "line": 3,
+            "description": "Stretch wrap roll 18in",
+            "quantity": 8.0,
+            "unit_price": 25.2
+          },
+          {
+            "line": 4,
+            "description": "Warehouse labor (hour)",
+            "quantity": 50.0,
+            "unit_price": 40.34
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-1521"
+      },
+      "result": {
+        "po_number": "PO-2026-1521",
+        "clean": true,
+        "issues": [],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Freight handling, pallet",
+            "po_line": 1,
+            "po_description": "Freight handling, pallet",
+            "billed_qty": 25.0,
+            "ordered_qty": 25.0,
+            "received_qty": 25.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 86.33,
+            "po_price": 86.33
+          },
+          {
+            "invoice_line": 2,
+            "description": "Shipping labels, 1000 pack",
+            "po_line": 2,
+            "po_description": "Shipping labels, 1000 pack",
+            "billed_qty": 20.0,
+            "ordered_qty": 20.0,
+            "received_qty": 20.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 36.56,
+            "po_price": 36.56
+          },
+          {
+            "invoice_line": 3,
+            "description": "Stretch wrap roll 18in",
+            "po_line": 3,
+            "po_description": "Stretch wrap roll 18in",
+            "billed_qty": 8.0,
+            "ordered_qty": 8.0,
+            "received_qty": 8.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 25.2,
+            "po_price": 25.2
+          },
+          {
+            "invoice_line": 4,
+            "description": "Warehouse labor (hour)",
+            "po_line": 4,
+            "po_description": "Warehouse labor (hour)",
+            "billed_qty": 50.0,
+            "ordered_qty": 50.0,
+            "received_qty": 50.0,
+            "already_invoiced": 0.0,
+            "invoice_price": 40.34,
+            "po_price": 40.34
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 7,
+      "tool": "approve_for_payment",
+      "args": {
+        "po_number": "PO-2026-1521",
+        "note": "Invoice matches PO and goods receipts."
+      },
+      "result": {
+        "approved": true,
+        "scheduled_payment_date": "2026-10-21"
+      },
+      "seconds": 0.0
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "doc_id": "inv_007",
+  "file": "inv_007.jpg",
+  "layout": "us",
+  "photo": true,
+  "scenario": "wrong_po",
+  "expected": {
+    "decision": "HOLD",
+    "reasons": [
+      "po_mismatch"
+    ],
+    "all_policy_reasons": [
+      "po_mismatch",
+      "unmatched_line"
+    ],
+    "po_number": "PO-2026-3107"
+  },
+  "invoice": {
+    "supplier_name": "Brightline Logistics LLC",
+    "supplier_tax_id": "04-8724948",
+    "invoice_number": "INV-9547",
+    "invoice_date": "2026-09-20",
+    "due_date": "2026-11-04",
+    "currency": "USD",
+    "subtotal": 3482.0,
+    "tax_rate": 0.0,
+    "tax_amount": 0.0,
+    "total": 3482.0,
+    "line_items": [
+      {
+        "description": "Stretch wrap roll 18in",
+        "quantity": 25.0,
+        "unit_price": 27.56,
+        "amount": 689.0
+      },
+      {
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 50.0,
+        "unit_price": 22.05,
+        "amount": 1102.5
+      },
+      {
+        "description": "Warehouse labor (hour)",
+        "quantity": 50.0,
+        "unit_price": 31.55,
+        "amount": 1577.5
+      },
+      {
+        "description": "Corrugated boxes 24x18x12",
+        "quantity": 50.0,
+        "unit_price": 2.26,
+        "amount": 113.0
+      }
+    ],
+    "po_number": "PO-2026-3107",
+    "bank_account": "Routing 645759304  Account 0673984398"
+  }
+}

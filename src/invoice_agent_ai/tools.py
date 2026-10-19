@@ -232,7 +232,7 @@ class Toolset:
         return {"approved": True, "scheduled_payment_date": rec["scheduled_payment_date"]}, True
 
     def t_hold_for_review(self, reasons: list[str] | str, note: str = ""):
-        reasons = [reasons] if isinstance(reasons, str) else list(reasons or [])
+        reasons = [reasons] if isinstance(reasons, str) else list(dict.fromkeys(reasons or []))
         bad = [r for r in reasons if r not in REASONS]
         if not reasons or bad:
             self.case.tool_errors += 1

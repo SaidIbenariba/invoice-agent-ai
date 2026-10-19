@@ -1,0 +1,120 @@
+{
+  "doc_id": "inv_023",
+  "file": "inv_023.pdf",
+  "decision": "REJECT",
+  "reasons": [
+    "duplicate"
+  ],
+  "po_number": null,
+  "note": "Duplicate invoice from Transports Lefèvre SAS, already paid on 2026-09-20.",
+  "tool_calls": 3,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 15.5,
+  "invoice": {
+    "supplier_name": "Transports Lefèvre SAS",
+    "supplier_tax_id": "FR23544127928",
+    "invoice_number": "F2026-7708",
+    "invoice_date": "2026-09-20",
+    "due_date": "2026-11-04",
+    "currency": "EUR",
+    "subtotal": 271.57,
+    "tax_rate": 20.0,
+    "tax_amount": 54.31,
+    "total": 325.88,
+    "line_items": [
+      {
+        "description": "Ramette papier A4 80g",
+        "quantity": 6.0,
+        "unit_price": 5.22,
+        "amount": 31.32
+      },
+      {
+        "description": "Heure de manutention",
+        "quantity": 5.0,
+        "unit_price": 35.8,
+        "amount": 179.0
+      },
+      {
+        "description": "Carton double cannelure",
+        "quantity": 25.0,
+        "unit_price": 2.45,
+        "amount": 61.25
+      }
+    ],
+    "po_number": "PO-2026-3645",
+    "bank_account": "FR76 5539 0409 1565 1619 1035 952"
+  },
+  "route": "text",
+  "extract_seconds": 42.7,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Transports Lefèvre SAS",
+        "supplier_tax_id": "FR23544127928",
+        "invoice_number": "F2026-7708",
+        "invoice_date": "2026-09-20",
+        "due_date": "2026-11-04",
+        "currency": "EUR",
+        "subtotal": 271.57,
+        "tax_rate": 20.0,
+        "tax_amount": 54.31,
+        "total": 325.88,
+        "line_items": [
+          {
+            "description": "Ramette papier A4 80g",
+            "quantity": 6.0,
+            "unit_price": 5.22,
+            "amount": 31.32
+          },
+          {
+            "description": "Heure de manutention",
+            "quantity": 5.0,
+            "unit_price": 35.8,
+            "amount": 179.0
+          },
+          {
+            "description": "Carton double cannelure",
+            "quantity": 25.0,
+            "unit_price": 2.45,
+            "amount": 61.25
+          }
+        ],
+        "po_number": "PO-2026-3645",
+        "bank_account": "****5952",
+        "missing": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": false,
+        "issues": [
+          {
+            "code": "duplicate",
+            "message": "invoice F2026-7708 from Transports Lefèvre SAS already paid (dated 2026-09-20, total 325.88)"
+          }
+        ],
+        "next_step": "Duplicate: call reject_invoice."
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "reject_invoice",
+      "args": {
+        "note": "Duplicate invoice from Transports Lefèvre SAS, already paid on 2026-09-20."
+      },
+      "result": {
+        "rejected": true
+      },
+      "seconds": 0.0
+    }
+  ]
+}

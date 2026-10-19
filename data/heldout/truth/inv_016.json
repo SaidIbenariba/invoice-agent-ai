@@ -1,0 +1,41 @@
+{
+  "doc_id": "inv_016",
+  "file": "inv_016.pdf",
+  "layout": "us",
+  "photo": false,
+  "scenario": "clean",
+  "expected": {
+    "decision": "APPROVE",
+    "reasons": [],
+    "all_policy_reasons": [],
+    "po_number": "PO-2026-9177"
+  },
+  "invoice": {
+    "supplier_name": "Keystone Packaging Co.",
+    "supplier_tax_id": "56-6244254",
+    "invoice_number": "INV-6420",
+    "invoice_date": "2026-09-12",
+    "due_date": "2026-10-27",
+    "currency": "USD",
+    "subtotal": 174.74,
+    "tax_rate": 8.25,
+    "tax_amount": 14.42,
+    "total": 189.16,
+    "line_items": [
+      {
+        "description": "Freight handling, pallet",
+        "quantity": 2.0,
+        "unit_price": 63.28,
+        "amount": 126.56
+      },
+      {
+        "description": "Printer paper, case",
+        "quantity": 1.0,
+        "unit_price": 48.18,
+        "amount": 48.18
+      }
+    ],
+    "po_number": "PO-2026-9177",
+    "bank_account": "Routing 306997884  Account 5912033678"
+  }
+}

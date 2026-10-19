@@ -1,0 +1,312 @@
+{
+  "doc_id": "inv_007",
+  "file": "inv_007.jpg",
+  "decision": "HOLD",
+  "reasons": [
+    "po_mismatch",
+    "po_mismatch",
+    "unmatched_line",
+    "unmatched_line",
+    "unmatched_line",
+    "unmatched_line"
+  ],
+  "po_number": null,
+  "note": "PO-2026-3107 does not match the invoice. Invoice lines do not correspond to any lines on the PO. Further investigation required.",
+  "tool_calls": 7,
+  "guard_blocks": 0,
+  "tool_errors": 0,
+  "seconds": 69.9,
+  "invoice": {
+    "supplier_name": "Brightline Logistics LLC",
+    "supplier_tax_id": "04-8724948",
+    "invoice_number": "INV-9547",
+    "invoice_date": "2026-09-20",
+    "due_date": "2026-11-04",
+    "currency": "USD",
+    "subtotal": 3482.0,
+    "tax_rate": 0.0,
+    "tax_amount": 0.0,
+    "total": 3482.0,
+    "line_items": [
+      {
+        "description": "Stretch wrap roll 18in",
+        "quantity": 25.0,
+        "unit_price": 27.56,
+        "amount": 689.0
+      },
+      {
+        "description": "Shipping labels, 1000 pack",
+        "quantity": 50.0,
+        "unit_price": 22.05,
+        "amount": 1102.5
+      },
+      {
+        "description": "Warehouse labor (hour)",
+        "quantity": 50.0,
+        "unit_price": 31.55,
+        "amount": 1577.5
+      },
+      {
+        "description": "Corrugated boxes 24x18x12",
+        "quantity": 50.0,
+        "unit_price": 2.26,
+        "amount": 113.0
+      }
+    ],
+    "po_number": "PO-2026-3107",
+    "bank_account": "Routing 645759304 Account 0673984398"
+  },
+  "route": "vision",
+  "extract_seconds": 68.8,
+  "steps": [
+    {
+      "turn": 1,
+      "tool": "read_invoice",
+      "args": {},
+      "result": {
+        "supplier_name": "Brightline Logistics LLC",
+        "supplier_tax_id": "04-8724948",
+        "invoice_number": "INV-9547",
+        "invoice_date": "2026-09-20",
+        "due_date": "2026-11-04",
+        "currency": "USD",
+        "subtotal": 3482.0,
+        "tax_rate": 0.0,
+        "tax_amount": 0.0,
+        "total": 3482.0,
+        "line_items": [
+          {
+            "description": "Stretch wrap roll 18in",
+            "quantity": 25.0,
+            "unit_price": 27.56,
+            "amount": 689.0
+          },
+          {
+            "description": "Shipping labels, 1000 pack",
+            "quantity": 50.0,
+            "unit_price": 22.05,
+            "amount": 1102.5
+          },
+          {
+            "description": "Warehouse labor (hour)",
+            "quantity": 50.0,
+            "unit_price": 31.55,
+            "amount": 1577.5
+          },
+          {
+            "description": "Corrugated boxes 24x18x12",
+            "quantity": 50.0,
+            "unit_price": 2.26,
+            "amount": 113.0
+          }
+        ],
+        "po_number": "PO-2026-3107",
+        "bank_account": "****4398",
+        "missing": []
+      },
+      "seconds": 0.01
+    },
+    {
+      "turn": 2,
+      "tool": "check_invoice",
+      "args": {},
+      "result": {
+        "passed": true,
+        "issues": []
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 3,
+      "tool": "find_supplier",
+      "args": {
+        "tax_id": "04-8724948"
+      },
+      "result": {
+        "found": true,
+        "supplier_id": "SUP-101",
+        "name": "Brightline Logistics LLC",
+        "tax_id": "04-8724948",
+        "currency": "USD",
+        "payment_terms_days": 45,
+        "email_on_file": "accounts@brightlinelogistic.example",
+        "phone_on_file": "+1 214 555 0110",
+        "bank_account_on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 4,
+      "tool": "verify_bank_account",
+      "args": {
+        "supplier_id": "SUP-101"
+      },
+      "result": {
+        "match": true,
+        "on_invoice": "****4398",
+        "on_file": "****4398"
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 5,
+      "tool": "get_purchase_order",
+      "args": {
+        "po_number": "PO-2026-3107"
+      },
+      "result": {
+        "found": true,
+        "po_number": "PO-2026-3107",
+        "supplier_id": "SUP-105",
+        "supplier_name": "Transports Lefèvre SAS",
+        "order_date": "2026-09-05",
+        "currency": "EUR",
+        "status": "open",
+        "total": 6947.65,
+        "lines": [
+          {
+            "line": 1,
+            "description": "Ramette papier A4 80g",
+            "quantity": 5.0,
+            "unit_price": 6.33
+          },
+          {
+            "line": 2,
+            "description": "Prestation de maintenance",
+            "quantity": 25.0,
+            "unit_price": 71.93
+          },
+          {
+            "line": 3,
+            "description": "Carton double cannelure",
+            "quantity": 25.0,
+            "unit_price": 1.85
+          },
+          {
+            "line": 4,
+            "description": "Transport palette Lyon-Paris",
+            "quantity": 50.0,
+            "unit_price": 101.43
+          }
+        ]
+      },
+      "seconds": 0.0
+    },
+    {
+      "turn": 6,
+      "tool": "three_way_match",
+      "args": {
+        "po_number": "PO-2026-3107"
+      },
+      "result": {
+        "po_number": "PO-2026-3107",
+        "clean": false,
+        "issues": [
+          {
+            "code": "po_mismatch",
+            "message": "PO-2026-3107 belongs to Transports Lefèvre SAS, not Brightline Logistics LLC"
+          },
+          {
+            "code": "po_mismatch",
+            "message": "invoice currency USD, PO currency EUR"
+          },
+          {
+            "code": "unmatched_line",
+            "message": "line 1 'Stretch wrap roll 18in' matches no line on PO-2026-3107"
+          },
+          {
+            "code": "unmatched_line",
+            "message": "line 2 'Shipping labels, 1000 pack' matches no line on PO-2026-3107"
+          },
+          {
+            "code": "unmatched_line",
+            "message": "line 3 'Warehouse labor (hour)' matches no line on PO-2026-3107"
+          },
+          {
+            "code": "unmatched_line",
+            "message": "line 4 'Corrugated boxes 24x18x12' matches no line on PO-2026-3107"
+          }
+        ],
+        "lines": [
+          {
+            "invoice_line": 1,
+            "description": "Stretch wrap roll 18in",
+            "po_line": null,
+            "po_description": null,
+            "billed_qty": 25.0,
+            "ordered_qty": null,
+            "received_qty": null,
+            "already_invoiced": null,
+            "invoice_price": 27.56,
+            "po_price": null
+          },
+          {
+            "invoice_line": 2,
+            "description": "Shipping labels, 1000 pack",
+            "po_line": null,
+            "po_description": null,
+            "billed_qty": 50.0,
+            "ordered_qty": null,
+            "received_qty": null,
+            "already_invoiced": null,
+            "invoice_price": 22.05,
+            "po_price": null
+          },
+          {
+            "invoice_line": 3,
+            "description": "Warehouse labor (hour)",
+            "po_line": null,
+            "po_description": null,
+            "billed_qty": 50.0,
+            "ordered_qty": null,
+            "received_qty": null,
+            "already_invoiced": null,
+            "invoice_price": 31.55,
+            "po_price": null
+          },
+          {
+            "invoice_line": 4,
+            "description": "Corrugated boxes 24x18x12",
+            "po_line": null,
+            "po_description": null,
+            "billed_qty": 50.0,
+            "ordered_qty": null,
+            "received_qty": null,
+            "already_invoiced": null,
+            "invoice_price": 2.26,
+            "po_price": null
+          }
+        ],
+        "next_step": "Do not approve against this PO. If you are checking candidates from search_purchase_orders, try the next one; otherwise call hold_for_review with these issue codes."
+      },
+      "seconds": 0.01
+    },
+    {
+      "turn": 7,
+      "tool": "hold_for_review",
+      "args": {
+        "reasons": [
+          "po_mismatch",
+          "po_mismatch",
+          "unmatched_line",
+          "unmatched_line",
+          "unmatched_line",
+          "unmatched_line"
+        ],
+        "note": "PO-2026-3107 does not match the invoice. Invoice lines do not correspond to any lines on the PO. Further investigation required."
+      },
+      "result": {
+        "on_hold": true,
+        "reasons": [
+          "po_mismatch",
+          "po_mismatch",
+          "unmatched_line",
+          "unmatched_line",
+          "unmatched_line",
+          "unmatched_line"
+        ]
+      },
+      "seconds": 0.0
+    }
+  ]
+}
