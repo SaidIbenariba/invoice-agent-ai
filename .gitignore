@@ -13,3 +13,4 @@ wheels/
 .n8n-runtime/
 .n8n/
 out/
+.npm/
